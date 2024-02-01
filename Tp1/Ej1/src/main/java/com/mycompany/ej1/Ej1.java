@@ -16,6 +16,7 @@ public class Ej1 {
         
         String[] opciones = {"Suma", "Producto", "Diferencia","Cociente","Volver a ingresar numeros","Salir"};
         
+        
         JTextField textField = new JTextField();
         textField.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent evt) {
@@ -28,25 +29,23 @@ public class Ej1 {
                 }
             }
         });
-         
+        //Para que pueda tener el textField con un string
+        Object[] params = {"Ingrese un numero:",textField}; 
+        
         int num1,num2,seleccion;
+        boolean val;
         do {            
-            String[] boton = {"OK","Cancelar"};
-            int temp = JOptionPane.showOptionDialog(null, textField, "Ingrese el primer numero:", JOptionPane.OK_OPTION, JOptionPane.PLAIN_MESSAGE, null, boton, boton[0]);
-            //Para que se salga si le pone cancelar
-            if (temp == 1) {
-                System.exit(0);
-            }
+            do{
+                val = validar(JOptionPane.showConfirmDialog(null, params, "Input", JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE),textField);
+            }while(!val);
             num1 = Integer.parseInt(textField.getText());
             
             //Para limpiar el textField
             textField.setText("");
-            temp = JOptionPane.showOptionDialog(null, textField, "Ingrese el segundo numero:", JOptionPane.OK_OPTION, JOptionPane.PLAIN_MESSAGE, null, boton, boton[0]);
             
-            //Para que se salga si le pone cancelar
-            if (temp == 1) {
-                System.exit(0);
-            }
+            do{
+                val = validar(JOptionPane.showConfirmDialog(null, params, "Input", JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE),textField);
+            }while(!val);
             num2 = Integer.parseInt(textField.getText()); 
             
             //Para limpiar el textField
@@ -59,22 +58,33 @@ public class Ej1 {
         }while (seleccion<5);
     }
     
+    //Para validar si el texto esta en blanco o pone cancelar
+    public static boolean validar(int temp, JTextField textField){
+        if (temp == JOptionPane.CANCEL_OPTION) {
+            System.exit(0);
+        }else if (textField.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "No se permiten espacios en blanco","Error",JOptionPane.ERROR_MESSAGE);               
+            return false;
+        }
+        return true;
+    }
+    
     public static void calcular(int num1, int num2, int seleccion){           
             switch (seleccion) {
                 case 0:
-                    JOptionPane.showMessageDialog(null,"El resultado de "+num1+" + "+num2+" es: "+(num1+num2));
+                    JOptionPane.showMessageDialog(null,"El resultado de "+num1+" + "+num2+" es: "+(num1+num2),"Resultado",JOptionPane.PLAIN_MESSAGE);
                     break;
                 case 1:
-                    JOptionPane.showMessageDialog(null,"El resultado de "+num1+" * "+num2+" es: "+(num1*num2));
+                    JOptionPane.showMessageDialog(null,"El resultado de "+num1+" * "+num2+" es: "+(num1*num2),"Resultado",JOptionPane.PLAIN_MESSAGE);
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null,"El resultado de "+num1+" - "+num2+" es: "+(num1-num2));
+                    JOptionPane.showMessageDialog(null,"El resultado de "+num1+" - "+num2+" es: "+(num1-num2),"Resultado",JOptionPane.PLAIN_MESSAGE);
                     break;
                 case 3:
                     if (num2!=0){
-                        JOptionPane.showMessageDialog(null,"El resultado de "+num1+" / "+num2+" es: "+(num1/num2));
+                        JOptionPane.showMessageDialog(null,"El resultado de "+num1+" / "+num2+" es: "+(num1/num2),"Resultado",JOptionPane.PLAIN_MESSAGE);
                     }else{
-                        JOptionPane.showMessageDialog(null, "No se puede dividir por 0");               
+                        JOptionPane.showMessageDialog(null, "No se puede dividir por 0","Error",JOptionPane.ERROR_MESSAGE);               
                     }
                     break;
                 default:
