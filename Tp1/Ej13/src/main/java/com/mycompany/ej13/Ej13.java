@@ -6,9 +6,7 @@ package com.mycompany.ej13;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.rmi.server.UID;
 import java.util.Random;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
