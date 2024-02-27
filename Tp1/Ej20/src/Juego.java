@@ -1,14 +1,45 @@
 
 import java.awt.Color;
 import java.util.Random;
+import java.applet.AudioClip;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 
 public class Juego extends javax.swing.JFrame {
     public static int intentos = 0;
+    public static String nombre = "";
     static Random random = new Random();
     public static int adivinar = random.nextInt(1001);
     
-    public Juego() {     
+    // Crear un objeto AudioClip y cargar el archivo de sonido
+    AudioClip win = java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Victoria.wav"));
+    
+    public Juego() {   
+        nombre = JOptionPane.showInputDialog("Por favor, ingresa tu nombre: ");
         initComponents();
+        //Esto es para personalizar el spinner para validaciones y que con el enter ingrese el numero en vez de tener que apretar el boton
+        JFormattedTextField tf = ((JSpinner.DefaultEditor) Input.getEditor()).getTextField();
+        tf.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent evt) {
+                int t=evt.getKeyCode();
+                //Teclas Invalidas
+                if ((t>=evt.VK_A && t<=evt.VK_Z) || t==evt.VK_SPACE) {
+                    tf.setEditable(false);
+                //El enter para el input
+                }else if(t==evt.VK_ENTER){
+                    if (!tf.getText().isEmpty()) {
+                        chequear();
+                    }
+                //Teclas validas distintas al enter    
+                }else{
+                    
+                }
+            }
+        });
+        
         setLocationRelativeTo(null);
         Ganaste.setText("");
         Mensaje.setText("");
@@ -40,6 +71,12 @@ public class Juego extends javax.swing.JFrame {
 
         Input.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Input.setEditor(new javax.swing.JSpinner.NumberEditor(Input, ""));
+        Input.setValue(1);
+        Input.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                InputStateChanged(evt);
+            }
+        });
 
         Mensaje.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
         Mensaje.setText("Mas bajo!");
@@ -127,9 +164,28 @@ public class Juego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AdivinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdivinarActionPerformed
+        chequear();
+    }//GEN-LAST:event_AdivinarActionPerformed
+
+    private void VolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverMenuActionPerformed
+        MenuPrincipal menuPrincipal = new MenuPrincipal();
+        menuPrincipal.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_VolverMenuActionPerformed
+
+    private void InputStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_InputStateChanged
+        if ((int)Input.getValue()>1000) {
+            Input.setValue(1000);
+        }else if((int)Input.getValue()<1){
+            Input.setValue(1);
+        }
+    }//GEN-LAST:event_InputStateChanged
+
+    private void chequear(){
         int intento = (int)Input.getValue();
         if (intento==adivinar) {
-            Ganaste.setText("Ganaste!");
+            win.play();
+            Ganaste.setText("Ganaste "+nombre+"!");
             Input.setEnabled(false);
             Adivinar.setEnabled(false);
         }else if (intento<adivinar) {
@@ -145,14 +201,7 @@ public class Juego extends javax.swing.JFrame {
             intentos++;
             Intentos.setText("Intentos: "+intentos);
         }
-    }//GEN-LAST:event_AdivinarActionPerformed
-
-    private void VolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverMenuActionPerformed
-        MenuPrincipal menuPrincipal = new MenuPrincipal();
-        menuPrincipal.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_VolverMenuActionPerformed
-
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Adivinar;
