@@ -19,7 +19,6 @@ public class Ej18 {
        int seleccion=0;
         
         
-        
         JTextField textField = new JTextField();
         
         //Agregar un key listener para que detecte los inputs incorrectos

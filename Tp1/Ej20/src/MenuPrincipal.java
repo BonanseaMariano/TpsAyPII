@@ -29,7 +29,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         PanelPrincipal = new javax.swing.JPanel();
         Titulo = new javax.swing.JLabel();
         JugarBoton = new javax.swing.JButton();
-        RankingBoton = new javax.swing.JButton();
         SalirBoton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,15 +45,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JugarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JugarBotonActionPerformed(evt);
-            }
-        });
-
-        RankingBoton.setBackground(new java.awt.Color(153, 153, 153));
-        RankingBoton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/RankingBoton.png"))); // NOI18N
-        RankingBoton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        RankingBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RankingBotonActionPerformed(evt);
             }
         });
 
@@ -77,11 +67,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGap(59, 59, 59)
                         .addComponent(Titulo))
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addGap(83, 83, 83)
+                        .addGap(149, 149, 149)
                         .addComponent(JugarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(RankingBoton)
-                        .addGap(37, 37, 37)
+                        .addGap(86, 86, 86)
                         .addComponent(SalirBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
@@ -90,10 +78,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
                 .addComponent(Titulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JugarBoton)
-                    .addComponent(RankingBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SalirBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(SalirBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 60, Short.MAX_VALUE))
         );
 
@@ -120,10 +107,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         juego.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_JugarBotonActionPerformed
-
-    private void RankingBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RankingBotonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RankingBotonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,7 +146,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JugarBoton;
     private javax.swing.JPanel PanelPrincipal;
-    private javax.swing.JButton RankingBoton;
     private javax.swing.JButton SalirBoton;
     private javax.swing.JLabel Titulo;
     // End of variables declaration//GEN-END:variables
