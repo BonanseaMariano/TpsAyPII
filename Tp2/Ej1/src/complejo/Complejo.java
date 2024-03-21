@@ -10,11 +10,11 @@ package complejo;
  */
 public class Complejo {
         // Atributos
-	private int real;
-	private int imaginaria;
+	private double real;
+	private double imaginaria;
         
 	// Constructor
-	public Complejo(int real, int imaginaria) {
+	public Complejo(double real, double imaginaria) {
 		this.real = real;
                 
 		if (imaginaria == 0)
@@ -24,19 +24,19 @@ public class Complejo {
 
 	// Getters: acceder a los valores de los atributos
 	// Setters: modificar los valores de los atributos
-	public int getReal() {
+	public double getReal() {
 		return real;
 	}
 
-	public void setReal(int real) {
+	public void setReal(double real) {
 		this.real = real;
 	}
 
-	public int getImaginaria() {
+	public double getImaginaria() {
 		return imaginaria;
 	}
 
-	public void setImaginaria(int imaginaria) {
+	public void setImaginaria(double imaginaria) {
 		if (imaginaria == 0)
 			throw new IllegalArgumentException("El denominador debe ser distinto de cero");
 		this.imaginaria = imaginaria;
@@ -44,30 +44,32 @@ public class Complejo {
         
 	// Metodos
 	public Complejo sumar(Complejo b) {
-            int r = real + b.real;
-            int i = imaginaria + b.imaginaria;
+            double r = real + b.real;
+            double i = imaginaria + b.imaginaria;
             return new Complejo(r,i);
 	}
 
 	public Complejo restar(Complejo b) {
-            int r = real - b.real;
-            int i = imaginaria - b.imaginaria;
+            double r = real - b.real;
+            double i = imaginaria - b.imaginaria;
             return new Complejo(r,i);
 	}
 
 	public Complejo multiplicar(Complejo b) {
-            int r = (real * b.real) - (imaginaria * b.imaginaria);
-            int i = (real * b.imaginaria) +(imaginaria * b.real);
+            double r = (real * b.real) - (imaginaria * b.imaginaria);
+            double i = (real * b.imaginaria) +(imaginaria * b.real);
             return new Complejo(r,i);
 	}
 
 	public Complejo dividir(Complejo b) {
-           return null;
-	}
+           double r = (real * b.real + imaginaria * b.imaginaria)/Math.pow(2, b.real)+Math.pow(2, b.imaginaria);
+           double i = (imaginaria * b.real - real * b.real) / Math.pow(2, b.real)+Math.pow(2, b.imaginaria);
+           return new Complejo(r,i);
+        }
 
 	public Complejo divisionEscalar(Complejo base, int escalar) {
-            int r = real/escalar;
-            int i = imaginaria/escalar;
+            double r = real/escalar;
+            double i = imaginaria/escalar;
             return new Complejo(r,i);
 	}
 
