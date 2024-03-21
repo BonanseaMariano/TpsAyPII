@@ -6,14 +6,17 @@ public class Racional {
 	// Atributos
 	private int numerador;
 	private int denominador;
+        //Atributo estatico (Pertenece a la clase y es independiente de los objetos que se crean)
+        private static int cuenta=0;
 
 	// Constructor
 	public Racional(int numerador, int denominador) {
 		this.numerador = numerador;
-
+                
 		if (denominador == 0)
 			throw new IllegalArgumentException("El denominador debe ser distinto de cero");
 		this.denominador = denominador;
+                cuenta++;
 	}
 
 	// Getters: acceder a los valores de los atributos
@@ -36,35 +39,43 @@ public class Racional {
 		this.denominador = denominador;
 	}
 
+        public static int getCuenta() {
+            return cuenta;
+        }
+
+        public static void setCuenta(int cuenta) {
+            Racional.cuenta = cuenta;
+        }
+        
 	// Metodos
 	public Racional sumar(Racional b) {
             int n = (numerador * b.denominador) + (b.numerador * denominador);
             int d = denominador * b.denominador;
-            return new Racional(n, d);
+            return Racional.simplificar(new Racional(n, d));
 	}
 
 	public Racional restar(Racional b) {
             int n = (numerador * b.denominador) + (b.numerador * denominador);
             int d = denominador * b.denominador;
-            return new Racional(n, d);
+            return Racional.simplificar(new Racional(n, d));
 	}
 
 	public Racional multiplicar(Racional b) {
             int n = numerador * b.numerador;
             int d = denominador * b.denominador;
-            return new Racional(n, d);
+            return Racional.simplificar(new Racional(n, d));
 	}
 
 	public Racional dividir(Racional b) {
             int n = numerador * b.denominador;
             int d = denominador * b.numerador;
-            return new Racional(n, d);
+            return Racional.simplificar(new Racional(n, d));
 	}
 
 	public static Racional potencia(Racional base, int exponente) {
             int n = (int) Math.pow((double)exponente, (double)base.numerador);
             int d = (int) Math.pow((double)exponente, (double)base.denominador);
-            return new Racional(n, d);
+            return Racional.simplificar(new Racional(n, d));
 	}
 
 	// Metodo estatico
@@ -87,7 +98,7 @@ public class Racional {
 		return ((r1.numerador == r2.numerador) && (r1.denominador == r2.denominador));
 	}
 
-	// M�todo privado
+	// Metodo privado
 	private static int mcd(int m, int n) {
 		int t;
 		while (m > 0) {

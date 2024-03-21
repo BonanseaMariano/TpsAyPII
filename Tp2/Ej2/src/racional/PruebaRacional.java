@@ -27,7 +27,7 @@ class PruebaRacional {
 		Racional r4 = r1.sumar(r2).sumar(r3);
 		System.out.println(r1 + " + " + r2 + " + " + r3 + " = " + r4);
 
-		// Llamar a un método estático
+		// Llamar a un metodo estatico
 		Racional r5 = Racional.simplificar(r4);
 		System.out.println(r1 + " + " + r2 + " + " + r3 + " = " + r5);
 
@@ -81,7 +81,8 @@ class PruebaRacional {
 		Racional r8 = new Racional((int) a, (int) b);
 		System.out.println(r8);
 				 		
-		
+		//Impresion de cuantas veces se creo una clase Racional
+                System.out.println(Racional.getCuenta());
 	}
 
 }
