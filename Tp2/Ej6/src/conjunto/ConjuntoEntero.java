@@ -4,65 +4,92 @@ import java.util.Arrays;
 
 public class ConjuntoEntero {
 
-	private static final int MAX = 101;
-	private boolean conjunto[];
+    private static final int MAX = 101;
+    private boolean conjunto[];
 
-	public ConjuntoEntero() {
-		conjunto = new boolean[MAX];
-	}
+    public ConjuntoEntero() {
+        conjunto = new boolean[MAX];
+    }
 
-	// Implementar
-	public void insertarElemento(int i) {
-		
-	}
+    public void insertarElemento(int i) {
+        conjunto[i] = true;
+    }
 
-	// Implementar
-	public void eliminarElemento(int i) {
-		
-	}
+    public void eliminarElemento(int i) {
+        conjunto[i] = false;
+    }
 
-	// Implementar
-	public ConjuntoEntero union(ConjuntoEntero c) {		
-		return null;
-	}
-	
-	// Implementar
-	public ConjuntoEntero interseccion(ConjuntoEntero c) {		
-		return null;
-	}
+    public ConjuntoEntero union(ConjuntoEntero c) {
+        //Declaro el conjunto resultado
+        ConjuntoEntero resultado = new ConjuntoEntero();
+        //Recorro ambos arreglos viendo si el elemento pertenece al menos a uno de los 2 conjuntos y lo guardo
+        for (int i = 0; i < MAX; i++) {
+            if (this.conjunto[i] || c.conjunto[i]) {
+                resultado.conjunto[i] = true;
+            }
+        }
+        return resultado;
+    }
 
-	// Implementar
-	public ConjuntoEntero diferencia(ConjuntoEntero c) {		
-		return null;
-	}
+    public ConjuntoEntero interseccion(ConjuntoEntero c) {
+        //Declaro el conjunto resultado
+        ConjuntoEntero resultado = new ConjuntoEntero();
+        //Recorro ambos arreglos viendo si el elemento pertenece a ambos conjuntos y lo guardo
+        for (int i = 0; i < MAX; i++) {
+            if (this.conjunto[i] && c.conjunto[i]) {
+                resultado.conjunto[i] = true;
+            }
+        }
+        return resultado;
+    }
 
-	// Implementar
-	public String toString() {
-		return null;
-	}
+    public ConjuntoEntero diferencia(ConjuntoEntero c) {
+        //Declaro el conjunto resultado
+        ConjuntoEntero resultado = new ConjuntoEntero();
+        //Recorro ambos arreglos viendo si el elemento pertenece al primer conjunto pero no al segundo
+        for (int i = 0; i < MAX; i++) {
+            if (this.conjunto[i] && !c.conjunto[i]) {
+                resultado.conjunto[i] = true;
+            }
+        }
+        return resultado;
+    }
 
-	// Generado con Eclipse
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Arrays.hashCode(conjunto);
-		return result;
-	}
+    @Override
+    public String toString() {
+        //Declaro el string
+        String cadena = new String();
+        //Recorro el arreglo y si el elemento es true lo agrego al String
+        for (int i = 0; i < MAX; i++) {
+            if (this.conjunto[i]) {
+                cadena += i + " ";
+            }
+        }
+        return cadena;
+    }
 
-	// Generado con Eclipse
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ConjuntoEntero other = (ConjuntoEntero) obj;
-		if (!Arrays.equals(conjunto, other.conjunto))
-			return false;
-		return true;
-	}
-	
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 29 * hash + Arrays.hashCode(this.conjunto);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        ConjuntoEntero other = (ConjuntoEntero) obj;
+        if (!Arrays.equals(conjunto, other.conjunto)) {
+            return false;
+        }
+        return true;
+    }
 }
