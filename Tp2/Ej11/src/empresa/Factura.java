@@ -69,5 +69,5 @@ public class Factura implements PorPagar {
         }
 
     }
-
+    
 }
