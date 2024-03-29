@@ -1,17 +1,31 @@
-// Fig. 8.9: EmployeeTest.java
-// Composition demonstration.
+package fecha;
 
-public class EmployeeTest 
+
+public class Employee 
 {
-   public static void main( String args[] )
-   {
-      Date birth = new Date( 7, 24, 1949 );
-      Date hire = new Date( 3, 12, 1988 );
-      Employee employee = new Employee( "Bob", "Blue", birth, hire );
+   private String firstName;
+   private String lastName;
+   private Date birthDate;
+   private Date hireDate;
 
-      System.out.println( employee ); 
-   } // end main
-} // end class EmployeeTest
+   // constructor to initialize name, birth date and hire date
+   public Employee( String first, String last, Date dateOfBirth, 
+      Date dateOfHire )
+   {
+      firstName = first;
+      lastName = last;
+      birthDate = dateOfBirth;
+      hireDate = dateOfHire;
+   } // end Employee constructor
+
+   // convert Employee to String format
+   public String toString()
+   {
+      return String.format( "%s, %s  Hired: %s  Birthday: %s", 
+         lastName, firstName, hireDate, birthDate );
+   } // end method toEmployeeString
+} // end class Employee
+
 
 
 /**************************************************************************

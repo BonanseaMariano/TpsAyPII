@@ -4,10 +4,6 @@
  */
 package progresiones;
 
-/**
- *
- * @author Mariano
- */
 public class Progression {
 
     protected long current;

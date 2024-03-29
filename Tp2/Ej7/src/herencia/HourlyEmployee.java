@@ -1,4 +1,5 @@
-// Fig. 10.6: HourlyEmployee.java
+package herencia;
+
 // HourlyEmployee class extends Employee.
 
 public class HourlyEmployee extends Employee 

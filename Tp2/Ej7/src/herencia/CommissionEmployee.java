@@ -1,4 +1,5 @@
-// Fig. 10.7: CommissionEmployee.java
+package herencia;
+
 // CommissionEmployee class extends Employee.
 
 public class CommissionEmployee extends Employee 

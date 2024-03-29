@@ -1,4 +1,5 @@
-// Fig. 10.5: SalariedEmployee.java
+package herencia;
+
 // SalariedEmployee class extends Employee.
 
 public class SalariedEmployee extends Employee 

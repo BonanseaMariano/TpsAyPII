@@ -1,4 +1,5 @@
-// Fig. 10.4: Employee.java
+package herencia;
+
 // Employee abstract superclass.
 
 public abstract class Employee 
