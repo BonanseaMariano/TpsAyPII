@@ -26,6 +26,7 @@ public class Lista<E> {
     public void add(int p, E e) throws IndexOutOfBoundsException {
         if (p >= 0 && p <= size) {
             if (size < array.length) {
+                //Desplaza todo lo que se encuentra desde la posicion a la derecha una posicion a la derecha para insertar el nuevo elemento
                 System.arraycopy(array, p, array, p + 1, size - p);
                 array[p] = e;
                 size++;
