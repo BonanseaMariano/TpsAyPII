@@ -50,17 +50,16 @@ public class Juego {
             } while (!chequearPosValida(Integer.parseInt(jTextFieldX.getText()) - 1, Integer.parseInt(jTextFieldY.getText()) - 1, turno));
 
             //Chequeo siempre si alguien gano para cortar antes
-            if (chequearVictoria()) {
+            if (chequearVictoria(turno)) {
                 break;
             } else if (chequearEmpate()) { //Y si no gano chequeo si hay empate para terminar el juego
                 break;
             }
 
-            //Cambio de turno
+            //Cambio de turno (en caso de que el juego continue)
             turno = !turno;
         }
 
-        JOptionPane.showMessageDialog(null, "Juego terminado, el ganador es " + nombreJugadorActual(turno) + "!");
     }
 
     private boolean chequearPosValida(int x, int y, boolean turno) {
@@ -92,13 +91,15 @@ public class Juego {
                 }
             }
         }
+        JOptionPane.showMessageDialog(null, "Empate, Juego terminado!");
         return true;
     }
 
-    private boolean chequearVictoria() {
+    private boolean chequearVictoria(boolean turno) {
         //Solo hace falta recorrer la matriz con un for porque es una matriz cuadrada y los metodos estan separados
         for (int i = 0; i < tamTablero; i++) {
             if (chequearVictoriaFilas(i) || chequearVictoriaColumnas(i) || chequearVictoriaDiagonal() || chequearVictoriaDiagonalInversa()) {
+                JOptionPane.showMessageDialog(null, "Juego terminado, el ganador es " + nombreJugadorActual(turno) + "!");
                 return true;
             }
         }
