@@ -1,4 +1,6 @@
-package singlyLinkedList;
+package test;
+
+import singlyLinkedList.SinglyLinkedList;
 
 public class TestSingleLinkedList {
 
@@ -62,7 +64,7 @@ public class TestSingleLinkedList {
 
         list.addPos("Z", 0 + comienzo);
         System.out.println(list);
-        System.out.println("(Z, A, B, C, D )");
+        System.out.println("(Z, A, B, C, D)");
         list.addPos("Y", 5 + comienzo);
         System.out.println(list);
         System.out.println("(Z, A, B, C, D, Y)");
