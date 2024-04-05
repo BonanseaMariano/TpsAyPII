@@ -2,62 +2,87 @@ package lista;
 
 public class Lista<E> {
 
-    private E lista[];
-    private int indice;
-    private final int MAXELEM;
+    private E[] array;
+    private int size;
 
-    public Lista(int n) {
-        lista = (E[]) new Object[n];
-        MAXELEM = n;
-        indice = 0;
+    public int getSize() {
+        return size;
     }
 
-    /* Agrega un elemento al final de la lista */
+    @SuppressWarnings("unchecked")
+    public Lista(int capacity) {
+        array = (E[]) new Object[capacity];
+        size = 0;
+    }
+
     public void add(E e) throws IndexOutOfBoundsException {
-        if (indice == MAXELEM) {
-            throw new IndexOutOfBoundsException("Lista llena");
+        if (size < array.length) {
+            array[size++] = e;
+        } else {
+            throw new IndexOutOfBoundsException("La lista esta llena.");
         }
-        lista[indice++] = e;
     }
 
-    /* Agrega un elemento a la lista en la posici�n p */
     public void add(int p, E e) throws IndexOutOfBoundsException {
-    }
-
-    /* Retorna el elemento que se encuentra en p */
-    public E get(int p) throws IndexOutOfBoundsException {
-        if (p < 0 || p >= indice) {
-            throw new IndexOutOfBoundsException("Indice inv�lido: " + p);
+        if (p >= 0 && p <= size) {
+            if (size < array.length) {
+                //Desplaza todo lo que se encuentra desde la posicion a la derecha una posicion a la derecha para insertar el nuevo elemento
+                System.arraycopy(array, p, array, p + 1, size - p);
+                array[p] = e;
+                size++;
+            } else {
+                throw new IndexOutOfBoundsException("La lista esta llena.");
+            }
+        } else {
+            throw new IndexOutOfBoundsException("Indice fuera de rango.");
         }
-        return lista[p];
     }
 
-    /* Remueve el elemento E de la lista. Retorna null sino se encuentra */
+    public E get(int p) throws IndexOutOfBoundsException {
+        if (p >= 0 && p < size) {
+            return array[p];
+        } else {
+            throw new IndexOutOfBoundsException("Indice fuera de rango.");
+        }
+    }
+
     public E remove(E e) {
-        boolean encontrado = false;
-        int i;
-        for (i = 0; i < indice && !encontrado; i++) {
-            if (lista[i].equals(e)) {
-                encontrado = true;
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(e)) {
+                E element = array[i];
+                int moveCount = size - i - 1;
+                if (moveCount > 0) {
+                    //Desplaza todo lo que se encuentra desde la posicion a la derecha una posicion a la izquierda para eliminar el elemento
+                    System.arraycopy(array, i + 1, array, i, moveCount);
+                }
+                array[--size] = null;
+                return element;
             }
         }
-        if (!encontrado) {
-            return null;
-        }
-        return remove(i);
-    }
-
-    /* Remueve el elemento que se encuentra en la posici�n p */
-    public E remove(int p) throws IndexOutOfBoundsException {
         return null;
     }
 
-    public String toString() {
-        String s = "";
-        for (int i = 0; i < indice; i++) {
-            s += lista[i] + "\n";
+    public E remove(int p) throws IndexOutOfBoundsException {
+        if (p >= 0 && p < size) {
+            E element = array[p];
+            int moveCount = size - p - 1;
+            if (moveCount > 0) {
+                System.arraycopy(array, p + 1, array, p, moveCount);
+            }
+            array[--size] = null;
+            return element;
+        } else {
+            throw new IndexOutOfBoundsException("Indice fuera de rango.");
         }
-        return s;
-
     }
+
+    @Override
+    public String toString() {
+        String cadena = "";
+        for (E e : array) {
+            cadena += e + " ";
+        }
+        return "Lista = [ " + cadena + "]";
+    }
+
 }

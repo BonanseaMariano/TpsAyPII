@@ -6,6 +6,7 @@ package singlyLinkedList;
  * @author Michael T. Goodrich
  * @author Roberto Tamassia
  * @author Michael H. Goldwasser
+ *
  */
 public class SinglyLinkedList<E> implements Cloneable {
     //---------------- nested Node class ----------------
@@ -249,32 +250,67 @@ public class SinglyLinkedList<E> implements Cloneable {
         return sb.toString();
     }
 
+    //---------------------------------- METODOS AGREGADOS ------------------------------
     /* Inserta el elemento e en la posicion n de la lista */
- /* Elimina el elemento e de la lista Retorna NULL si no lo encuentra */
     public void addPos(E e, int n) throws IndexOutOfBoundsException {
-        if (n > 0 || n < size) {
-            if (n == 0) {
-                this.addFirst(e);
-            } else if (n == 1) {
-                this.addLast(e);
-            } else {
-                
-            }
-        } else {
-            throw new IndexOutOfBoundsException("Posicion invalida de la lista");
+
+        if (n < 0) {
+            throw new IndexOutOfBoundsException("Índice fuera de rango");
         }
+
+        if (n == 0) {
+            this.addFirst(e);
+            return;
+        }
+
+        Node<E> nodo_anterior = head;
+        for (int i = 0; nodo_anterior != null && i < n - 1; ++i) {
+            nodo_anterior = nodo_anterior.getNext();
+        }
+
+        if (nodo_anterior == null) {
+            throw new IndexOutOfBoundsException("Índice fuera de rango");
+        }
+
+        Node<E> nuevoNodo = new Node<>(e, nodo_anterior.getNext());
+        nodo_anterior.setNext(nuevoNodo);
+
     }
-//
-//    public E removeElement(E e) /* Elimina elemento que se encuentra en la posicion n de la lista */ /* Retorna NULL si no es una posicion valida */
+
+    /* Elimina elemento que se encuentra en la posicion n de la lista */
+ /* Retorna NULL si no es una posicion valida */
+    public E removeElement(E e) {
+        //El elemento esta en la primera posicion
+        if (head.next.equals(e)) {
+            removeFirst();
+        }
+        //El elemento no se encontro
+        return null;
+    }
 //
 //    public E removePos(int n) throws IndexOutOfBoundsException /* Inserta todos los elementos de la Lista l al final de la lista */
 //
 //    public void concatenate(SinglyLinkedList l) /* Busca el elemento e dentro de la lista */ /* Retorna el elemnto si lo encuentra o Null si no esta en la lista */
 //
-//    public E search(E e) /* Verifica si dos listas son iguales */
-//
+
+    /* Busca el elemento e dentro de la lista */
+ /* Retorna el elemnto si lo encuentra o Null si no esta en la lista */
+    public E search(E e) {
+        Node<E> walk;
+        //Solo utilizo para recorrer desde el segundo hasta el anteultimo porque los otros casos ya estan contemplados
+        for (walk = head; walk != tail && !walk.equals(e); walk = walk.getNext());
+
+        //El elemento no se encontro
+        if (walk == tail) {
+            return null;
+        }
+
+        //El elemento se encontro
+        return e;
+    }
+
+//      /* Verifica si dos listas son iguales */
 //    public boolean equals(Object o) /* Retorna una copia de una lista dada */
 //
 //    public SinglyLinkedList<E> clone() throws CloneNotSupportedException
-
 }
