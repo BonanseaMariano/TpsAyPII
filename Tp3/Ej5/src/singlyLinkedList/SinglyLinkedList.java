@@ -280,33 +280,57 @@ public class SinglyLinkedList<E> implements Cloneable {
     /* Elimina elemento que se encuentra en la posicion n de la lista */
  /* Retorna NULL si no es una posicion valida */
     public E removeElement(E e) {
-        //El elemento esta en la primera posicion
-        if (head.next.equals(e)) {
-            removeFirst();
+        //El elemento se encontro
+        if (search(e) != null) {
+            Node<E> walk;
+            for (walk = head; walk != tail; walk = walk.getNext()) {
+                if (walk.getNext().equals(e)) {
+                    walk.setNext(walk.getNext().getNext());
+                    size--;
+                    return e;
+                }
+            }
         }
         //El elemento no se encontro
         return null;
     }
-//
-//    public E removePos(int n) throws IndexOutOfBoundsException /* Inserta todos los elementos de la Lista l al final de la lista */
-//
-//    public void concatenate(SinglyLinkedList l) /* Busca el elemento e dentro de la lista */ /* Retorna el elemnto si lo encuentra o Null si no esta en la lista */
-//
 
-    /* Busca el elemento e dentro de la lista */
- /* Retorna el elemnto si lo encuentra o Null si no esta en la lista */
+    public E removePos(int n) throws IndexOutOfBoundsException {
+
+        return null;
+    }
+
+    /* Inserta todos los elementos de la Lista l al final de la lista TERMINADO*/
+    /**
+     * @return Inserta todos los elementos de la Lista l al final de la lista
+     */
+    public void concatenate(SinglyLinkedList l) {
+        Node<E> copia = l.head;
+        for (int i = 0; i < l.size; i++) {
+            this.addLast(copia.getElement());
+            copia = copia.getNext();
+        }
+    }
+
+    /* Busca el elemento e dentro de la lista TERMINADO*/
+    /**
+     * @return Retorna el elemnto si lo encuentra o Null si no esta en la lista
+     */
     public E search(E e) {
-        Node<E> walk;
-        //Solo utilizo para recorrer desde el segundo hasta el anteultimo porque los otros casos ya estan contemplados
-        for (walk = head; walk != tail && !walk.equals(e); walk = walk.getNext());
 
-        //El elemento no se encontro
-        if (walk == tail) {
-            return null;
+        Node<E> walk = head;
+        while (walk != null && walk != e) {
+            walk = walk.getNext();
         }
 
-        //El elemento se encontro
-        return e;
+        if (walk != tail) {
+            //El elemento se encontro
+            return e;
+        }
+
+        //El elemento no se encontro
+        return null;
+
     }
 
 //      /* Verifica si dos listas son iguales */
