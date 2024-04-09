@@ -228,35 +228,43 @@ public class CircularlyLinkedList<E> implements Cloneable {
 
     //---------------------------------- METODOS AGREGADOS ------------------------------
     /**
+     * @param e Elemento a insertar
+     * @param n Posicion en donde insertar
      * @return Inserta el elemento e en la posicion n de la lista
      */
-//    public void addPos(E e, int n) throws IndexOutOfBoundsException {
-//
-//        if (n < 0 || n > size) {
-//            throw new IndexOutOfBoundsException("Índice fuera de rango");
-//        }
-//
-//        //Si la posicion es la primera
-//        if (n == 0) {
-//            this.addFirst(e);
-//            return;
-//        } else if (n == size) { //si la posicion es la ultima como este caso ya esta contemplado no hace falta modificar a tail
-//            this.addLast(e);
-//            return;
-//        }
-//
-//        //Si la posicion no es la primera ni la ultima
-//        Node<E> walk = tail.getNext();
-//        //Recorre hasta llegar a la posicion anterior a la indicada
-//        for (int i = 0; i < n - 1; i++) {
-//            walk = walk.getNext();
-//        }
-//
-//        walk.setNext(new Node<>(e, walk.getNext())); // Inserta el nuevo nodo
-//        size++; //incremento el tamaño de la lista
-//
-//    }
+    public void addPos(E e, int n) throws IndexOutOfBoundsException {
+
+        if (n < 0 || n > size) {
+            throw new IndexOutOfBoundsException("Índice fuera de rango");
+        }
+
+        //Si la posicion es la primera
+        if (n == 0) {
+            this.addFirst(e);
+            return;
+        } else if (n == size) { //si la posicion es la ultima como este caso ya esta contemplado no hace falta modificar a tail
+            this.addLast(e);
+            return;
+        }
+
+        //Si la posicion no es la primera ni la ultima
+        Node<E> actual = tail.getNext();
+        Node<E> anterior = tail;
+        int i = 1;
+        while (i <= n) {
+            anterior = actual;
+            actual = actual.getNext();
+            i++;
+        }
+        //Una vez llegue a la posicion inserto el nuevo elemento
+        anterior.setNext(new Node<>(e, actual));
+
+        size++; //incremento el tamaño de la lista
+
+    }
+
     /**
+     * @param e Elemento a eliminar
      * @return Elimina elemento que se encuentra en la posicion n de la lista,
      * Retorna NULL si no es una posicion valida
      */
@@ -284,55 +292,55 @@ public class CircularlyLinkedList<E> implements Cloneable {
     }
 
     /**
+     * @param n Posicion a eliminar
      * @return Elimina elemento que se encuentra en la posicion n de la lista,
      * Retorna NULL si no es una posicion valida
      */
-//    public E removePos(int n) throws IndexOutOfBoundsException {
-//        E eliminado;
-//        if (n < 0 || n > size) {
-//            throw new IndexOutOfBoundsException("Índice fuera de rango");
-//        }
-//
-//        //Si la posicion es la primera
-//        if (n == 0) {
-//            eliminado = this.first();
-//            this.removeFirst();
-//            return eliminado;
-//        }
-//
-//        //Si la posicion no es la primera ni la ultima
-//        Node<E> walk = head;
-//        //Recorre hasta llegar a la posicion anterior a la indicada
-//        for (int i = 0; i < n - 1 && walk.getNext() != null; i++) {
-//            walk = walk.getNext();
-//        }
-//
-//        eliminado = walk.getNext().getElement();
-//
-//        if (walk.getNext() == tail) {  //El elemento esta al final hay que modificar el nodo de tail
-//            walk.setNext(null); // Elimina el nodo si es la ultima posicion
-//            tail = walk; //seteo la nueva cola
-//            size--; // Decremento el tamaño de la lista
-//            return eliminado;
-//        }
-//
-//        walk.setNext(walk.getNext().getNext()); // Elimina el nodo si no es la ultima posicion
-//        size--; // Decremento el tamaño de la lista
-//        return eliminado;
-//    }
+    public E removePos(int n) throws IndexOutOfBoundsException {
+        E eliminado;
+        if (n < 0 || n > size) {
+            throw new IndexOutOfBoundsException("Índice fuera de rango");
+        }
+
+        //Si la posicion es la primera
+        if (n == 0) {
+            eliminado = this.first();
+            this.removeFirst();
+            return eliminado;
+        }
+
+        //Si la posicion no es la primera ni la ultima
+        Node<E> actual = tail.getNext();
+        Node<E> anterior = tail;
+        int i = 1;
+        while (i <= n) {
+            anterior = actual;
+            actual = actual.getNext();
+            i++;
+        }
+
+        anterior.setNext(actual.getNext());
+        size--; // Decremento el tamaño de la lista
+        if (actual == tail) {  //El elemento esta al final hay que modificar el nodo de tail
+            tail = anterior;
+        }
+        return actual.getElement();
+    }
+
     /**
+     * @param l Lista a concatenar
      * @return Inserta todos los elementos de la Lista l al final de la lista
      */
     public void concatenate(CircularlyLinkedList l) {
-        CircularlyLinkedList<E> nuevaListaCircular = new CircularlyLinkedList<>();
         Node<E> aux = tail.getNext(); //Auxiliar para guardar la cabeza de la original
-        
+
         this.tail.setNext(l.tail.getNext()); //Al siguiente de la cola original le asigno la cabeza de l
         l.tail.setNext(aux); //Al siguiente de la cola l le asigno la cabeza original
         this.tail = l.tail; //La nueva cabeza pasa a ser la de la lista agregada
-        
+
         this.size += l.size; //incremento el tamaño de la lista
     }
+
     /**
      * @return Busca el elemento e dentro de la lista, Retorna el elemnto si lo
      * encuentra o Null si no esta en la lista
@@ -350,29 +358,33 @@ public class CircularlyLinkedList<E> implements Cloneable {
         return null;
     }
 
-//    @SuppressWarnings({"unchecked"})
-//    public boolean equals(Object o) {
-//        if (o == null) {
-//            return false;
-//        }
-//        if (getClass() != o.getClass()) {
-//            return false;
-//        }
-//        CircularlyLinkedList other = (CircularlyLinkedList) o;   // use nonparameterized type
-//        if (size != other.size) {
-//            return false;
-//        }
-//        Node walkA = head;                               // traverse the primary list
-//        Node walkB = other.head;                         // traverse the secondary list
-//        while (walkA != null) {
-//            if (!walkA.getElement().equals(walkB.getElement())) {
-//                return false; //mismatch
-//            }
-//            walkA = walkA.getNext();
-//            walkB = walkB.getNext();
-//        }
-//        return true;   // if we reach this, everything matched successfully
-//    }
+    @SuppressWarnings({"unchecked"})
+    public boolean equals(Object o) {
+        if (o == null) {
+            return false;
+        }
+        if (getClass() != o.getClass()) {
+            return false;
+        }
+        CircularlyLinkedList other = (CircularlyLinkedList) o;   // use nonparameterized type
+        if (size != other.size) {
+            return false;
+        }
+
+        Node<E> walkA = tail;   // traverse the primary list
+        Node<E> walkB = other.tail; // traverse the secondary list
+        do {
+            if (!walkA.getElement().equals(walkB.getElement())) {
+                System.out.println("Elemento Distinto! " + walkA.getElement() + " != " + walkB.getElement());
+                return false;   //mismatch
+            }
+            walkA = walkA.getNext();
+            walkB = walkB.getNext();
+        } while (walkA != tail);
+
+        return true;   // if we reach this, everything matched successfully
+    }
+
     @SuppressWarnings({"unchecked"})
     public CircularlyLinkedList<E> clone() throws CloneNotSupportedException {
         // always use inherited Object.clone() to create the initial copy
@@ -387,19 +399,4 @@ public class CircularlyLinkedList<E> implements Cloneable {
         return other;
     }
 
-//    /**
-//     * Crea una nueva lista y copia todos sus elementos
-//     *
-//     * @return lista nueva copia de la lista actual
-//     *
-//     */
-//    public SinglyLinkedList<E> duplicate() {
-//        SinglyLinkedList<E> other = new SinglyLinkedList<E>();
-//        Node<E> walk = head;
-//        while (walk != null) {
-//            other.addLast(walk.getElement());
-//            walk = walk.getNext();
-//        }
-//        return other;
-//    }
 }
