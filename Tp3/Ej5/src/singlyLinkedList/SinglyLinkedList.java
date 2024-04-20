@@ -286,32 +286,35 @@ public class SinglyLinkedList<E> implements Cloneable {
      * Retorna NULL si no es una posicion valida
      */
     public E removeElement(E e) {
-        //El elemento se encontro
-        if (search(e) != null) {
-            Node<E> actual = head.getNext();
-            Node<E> anterior = head;
 
-            //Esta en la primera posicion
-            if (anterior.getElement() == e) {
-                removeFirst();
-                System.out.println("cola" + tail.getElement());
+        if (size == 0) {
+            return null;
+        }
+
+        //El elemento se encontro
+        Node<E> actual = head.getNext();
+        Node<E> anterior = head;
+
+        //Esta en la primera posicion
+        if (anterior.getElement().equals(e)) {
+            removeFirst();
+            return actual.getElement();
+        }
+
+        while (actual != null) {
+            if (actual.getElement().equals(e)) {
+                anterior.setNext(actual.getNext());
+                if (actual == tail) {  //El elemento se encontro y esta al final hay que modificar el nodo de tail
+                    tail = anterior;
+                }
+                size--; //Decremento el tamaño de la lista
                 return actual.getElement();
             }
 
-            while (actual != null) {
-                if (actual.getElement() == e) {
-                    anterior.setNext(actual.getNext());
-                    if (actual == tail) {  //El elemento se encontro y esta al final hay que modificar el nodo de tail
-                        tail = anterior;
-                    }
-                    size--; //Decremento el tamaño de la lista
-                    return actual.getElement();
-                }
-
-                anterior = actual;
-                actual = actual.getNext();
-            }
+            anterior = actual;
+            actual = actual.getNext();
         }
+
         //El elemento no se encontro
         return null;
     }

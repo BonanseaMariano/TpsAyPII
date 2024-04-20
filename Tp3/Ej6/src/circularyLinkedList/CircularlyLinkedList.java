@@ -269,24 +269,24 @@ public class CircularlyLinkedList<E> implements Cloneable {
      * Retorna NULL si no es una posicion valida
      */
     public E removeElement(E e) {
-        //El elemento se encontro
-        if (search(e) != null) {
-            Node<E> actual = tail.getNext();
-            Node<E> anterior = tail;
-            do {
-                if (actual.getElement().equals(e)) {
-                    anterior.setNext(actual.getNext());
-                    size--;
-                    if (actual == tail) { //El unico caso que hay que actualizar la cola es cuando esta se elimina
-                        tail = anterior;
-                    }
-                    return actual.getElement();
-                }
-                anterior = actual;
-                actual = actual.getNext();
-            } while (actual != tail.getNext());
-
+        if (size == 0) {
+            return null;
         }
+        Node<E> actual = tail.getNext();
+        Node<E> anterior = tail;
+        do {
+            if (actual.getElement().equals(e)) {
+                anterior.setNext(actual.getNext());
+                size--;
+                if (actual == tail) { //El unico caso que hay que actualizar la cola es cuando esta se elimina
+                    tail = anterior;
+                }
+                return actual.getElement();
+            }
+            anterior = actual;
+            actual = actual.getNext();
+        } while (actual != tail.getNext());
+
         //El elemento no se encontro
         return null;
     }
