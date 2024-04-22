@@ -52,9 +52,32 @@ public class ArrayCircularQueue<E> implements CircularQueue<E> {
     }
 
     // methods
+    /**
+     * Returns a string representation of the queue as a list of elements. This
+     * method runs in O(n) time, where n is the size of the queue.
+     *
+     * @return textual representation of the queue.
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("(");
+        int k = f;
+        for (int j = 0; j < sz; j++) {
+            if (j > 0) {
+                sb.append(", ");
+            }
+            sb.append(data[k]);
+            k = (k + 1) % data.length;
+        }
+        sb.append(")");
+        return sb.toString();
+    }
+
     @Override
     public void rotate() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (!isEmpty()) {
+            enqueue(dequeue());
+        }
     }
 
     @Override
@@ -68,18 +91,33 @@ public class ArrayCircularQueue<E> implements CircularQueue<E> {
     }
 
     @Override
-    public void enqueue(E e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void enqueue(E e) throws IllegalStateException {
+        if (sz == data.length) {
+            throw new IllegalStateException("Queue is full");
+        }
+        int avail = (f + sz) % data.length;   // use modular arithmetic
+        data[avail] = e;
+        sz++;
     }
 
     @Override
     public E first() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (isEmpty()) {
+            return null;
+        }
+        return data[f];
     }
 
     @Override
     public E dequeue() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (isEmpty()) {
+            return null;
+        }
+        E answer = data[f];
+        data[f] = null;                             // dereference to help garbage collection
+        f = (f + 1) % data.length;
+        sz--;
+        return answer;
     }
 
 }
