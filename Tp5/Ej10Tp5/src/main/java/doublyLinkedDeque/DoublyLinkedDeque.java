@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package doublyLinkedDeque;
 
 import interfaces.Deque;
@@ -11,9 +7,18 @@ import interfaces.Deque;
  * @author Mariano
  */
 public class DoublyLinkedDeque<E> implements Deque<E> {
-    
-    DoublyLinkedList<E> doublyLinkedList = new DoublyLinkedList<>();
-    
+
+    /**
+     * The primary storage for elements of the queue
+     */
+    private DoublyLinkedList<E> doublyLinkedList = new DoublyLinkedList<>();    // an empty double linked list
+
+    /**
+     * Constructs an initially empty queue.
+     */
+    public DoublyLinkedDeque() {    // new queue relies on the initially empty list
+    }
+
     @Override
     public int size() {
         return doublyLinkedList.size();
@@ -26,32 +31,37 @@ public class DoublyLinkedDeque<E> implements Deque<E> {
 
     @Override
     public E first() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return doublyLinkedList.first();
     }
 
     @Override
     public E last() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return doublyLinkedList.last();
     }
 
     @Override
     public void addFirst(E e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        doublyLinkedList.addFirst(e);
     }
 
     @Override
     public void addLast(E e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        doublyLinkedList.addLast(e);
     }
 
     @Override
     public E removeFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return doublyLinkedList.removeFirst();
     }
 
     @Override
     public E removeLast() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return doublyLinkedList.removeLast();
+    }
+
+    @Override
+    public String toString() {
+        return doublyLinkedList.toString();
     }
 
 }

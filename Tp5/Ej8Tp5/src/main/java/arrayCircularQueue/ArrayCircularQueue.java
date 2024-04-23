@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package arrayCircularQueue;
 
 import interfaces.CircularQueue;
@@ -12,112 +8,49 @@ import interfaces.CircularQueue;
  */
 public class ArrayCircularQueue<E> implements CircularQueue<E> {
 
-    // instance variables
-    /**
-     * Default array capacity.
-     */
-    public static final int CAPACITY = 1000;      // default array capacity
+    ArrayQueue<E> arrayQueue;
 
-    /**
-     * Generic array used for storage of queue elements.
-     */
-    private E[] data;                             // generic array used for storage
-
-    /**
-     * Index of the top element of the queue in the array.
-     */
-    private int f = 0;                            // index of the front element
-
-    /**
-     * Current number of elements in the queue.
-     */
-    private int sz = 0;                           // current number of elements
-
-    // constructors
-    /**
-     * Constructs an empty queue using the default array capacity.
-     */
     public ArrayCircularQueue() {
-        this(CAPACITY);
-    }         // constructs queue with default capacity
-
-    /**
-     * Constructs and empty queue with the given array capacity.
-     *
-     * @param capacity length of the underlying array
-     */
-    @SuppressWarnings({"unchecked"})
-    public ArrayCircularQueue(int capacity) {             // constructs queue with given capacity
-        data = (E[]) new Object[capacity];          // safe cast; compiler may give warning
+        arrayQueue = new ArrayQueue<>();
     }
 
-    // methods
-    /**
-     * Returns a string representation of the queue as a list of elements. This
-     * method runs in O(n) time, where n is the size of the queue.
-     *
-     * @return textual representation of the queue.
-     */
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder("(");
-        int k = f;
-        for (int j = 0; j < sz; j++) {
-            if (j > 0) {
-                sb.append(", ");
-            }
-            sb.append(data[k]);
-            k = (k + 1) % data.length;
-        }
-        sb.append(")");
-        return sb.toString();
+    public ArrayCircularQueue(int capacity) {
+        arrayQueue = new ArrayQueue<>(capacity);
     }
 
     @Override
     public void rotate() {
-        if (!isEmpty()) {
-            enqueue(dequeue());
-        }
+        arrayQueue.enqueue(arrayQueue.dequeue());
     }
 
     @Override
     public int size() {
-        return sz;
+        return arrayQueue.size();
     }
 
     @Override
     public boolean isEmpty() {
-        return (sz == 0);
+        return arrayQueue.isEmpty();
     }
 
     @Override
-    public void enqueue(E e) throws IllegalStateException {
-        if (sz == data.length) {
-            throw new IllegalStateException("Queue is full");
-        }
-        int avail = (f + sz) % data.length;   // use modular arithmetic
-        data[avail] = e;
-        sz++;
+    public void enqueue(E e) {
+        arrayQueue.enqueue(e);
     }
 
     @Override
     public E first() {
-        if (isEmpty()) {
-            return null;
-        }
-        return data[f];
+        return arrayQueue.first();
     }
 
     @Override
     public E dequeue() {
-        if (isEmpty()) {
-            return null;
-        }
-        E answer = data[f];
-        data[f] = null;                             // dereference to help garbage collection
-        f = (f + 1) % data.length;
-        sz--;
-        return answer;
+        return arrayQueue.dequeue();
+    }
+
+    @Override
+    public String toString() {
+        return arrayQueue.toString();
     }
 
 }
