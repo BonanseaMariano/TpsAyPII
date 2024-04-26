@@ -10,7 +10,6 @@ public class TestJuego {
 
     public static void main(String[] args) {
         Juego juego = new Juego(JOptionPane.showInputDialog("Por favor ingresa tu nombre"));
-        juego.jugar();
     }
 
 }

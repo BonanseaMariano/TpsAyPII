@@ -23,7 +23,19 @@ public class PruebaConjunto {
         System.out.println("Union: " + c1.union(c2));
         System.out.println("Interseccion: " + c1.interseccion(c2));
         System.out.println("Diferencia: " + c1.diferencia(c2));
-        System.out.println("Son iguales: " + c1.equals(c2));
+        System.out.println("Son iguales: " + c1.esIgualA(c2));
+
+        try {
+            c1.insertarElemento(-1);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Bien! Lanzo excepcion");
+        }
+
+        try {
+            c2.insertarElemento(102);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Bien! Lanzo excepcion");
+        }
 
         c2.eliminarElemento(15);
         ConjuntoEntero c3 = new ConjuntoEntero();
@@ -31,7 +43,7 @@ public class PruebaConjunto {
         c3.insertarElemento(20);
         System.out.println("Conjunto 2: " + c2);
         System.out.println("Conjunto 3: " + c3);
-        System.out.println("Son iguales: " + c2.equals(c3));
+        System.out.println("Son iguales: " + c2.esIgualA(c3));
 
     }
 

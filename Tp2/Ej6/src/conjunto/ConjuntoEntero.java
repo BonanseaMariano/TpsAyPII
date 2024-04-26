@@ -1,7 +1,5 @@
 package conjunto;
 
-import java.util.Arrays;
-
 public class ConjuntoEntero {
 
     private static final int MAX = 101;
@@ -11,11 +9,17 @@ public class ConjuntoEntero {
         conjunto = new boolean[MAX];
     }
 
-    public void insertarElemento(int i) {
+    public void insertarElemento(int i) throws IndexOutOfBoundsException {
+        if (i < 0 || i > conjunto.length) {
+            throw new IndexOutOfBoundsException();
+        }
         conjunto[i] = true;
     }
 
-    public void eliminarElemento(int i) {
+    public void eliminarElemento(int i) throws IndexOutOfBoundsException {
+        if (i < 0 || i > conjunto.length) {
+            throw new IndexOutOfBoundsException();
+        }
         conjunto[i] = false;
     }
 
@@ -55,6 +59,22 @@ public class ConjuntoEntero {
         return resultado;
     }
 
+    public boolean esIgualA(ConjuntoEntero c) {
+        //Si los conjuntos tienen diferentes tamaños
+        if (this.conjunto.length != c.conjunto.length) {
+            return false;
+        }
+
+        //Recorro ambos arreglos viendo si el elemento pertenece a ambos conjuntos
+        for (int i = 0; i < MAX; i++) {
+            if (this.conjunto[i] && !c.conjunto[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     @Override
     public String toString() {
         //Declaro el string
@@ -68,29 +88,4 @@ public class ConjuntoEntero {
         return cadena;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + Arrays.hashCode(this.conjunto);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        ConjuntoEntero other = (ConjuntoEntero) obj;
-        if (!Arrays.equals(conjunto, other.conjunto)) {
-            return false;
-        }
-        return true;
-    }
-    
 }

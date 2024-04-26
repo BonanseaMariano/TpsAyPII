@@ -13,22 +13,33 @@ import javax.swing.JOptionPane;
  */
 public class Juego {
 
-    private final int numeroAdivinar;
+    private int numeroAdivinar;
     private int intentos;
     private String nombreJugador;
 
     //Constructor con parametros
     public Juego(String nombreJugador) {
-        //Para generar el entero aleatorio a adivinar con el constructor
-        Random random = new Random();
-        numeroAdivinar = random.nextInt(1001);
-        //PARA DEBUGGING
-        System.out.println(numeroAdivinar);
-        //Nombre del jugador
-        this.nombreJugador = nombreJugador;
+        //Opcion de jugar nuevamente
+        int jugarDenuevo;
+        //Bucle Para seguir Jugando
+        do {
+            //Para generar el entero aleatorio a adivinar con el constructor
+            Random random = new Random();
+            numeroAdivinar = random.nextInt(1001);
+            //PARA DEBUGGING
+            System.out.println(numeroAdivinar);
+            //Nombre del jugador
+            this.nombreJugador = nombreJugador;
+            jugar();
+            do {
+                jugarDenuevo = Integer.parseInt(JOptionPane.showInputDialog("Desea jugar denuevo: 1-Si 2-No"));
+            } while (jugarDenuevo < 1 || jugarDenuevo > 2);
+
+        } while (jugarDenuevo == 1);
     }
 
     public void jugar() {
+
         //Bandera de corte del juego
         boolean ban;
         //Inicializo los intentos
@@ -46,8 +57,8 @@ public class Juego {
                 JOptionPane.showMessageDialog(null, "Demasiado bajo");
             } else if (input > numeroAdivinar) {
                 JOptionPane.showMessageDialog(null, "Demasiado alto");
-
             }
         } while (ban == false);
+
     }
 }
