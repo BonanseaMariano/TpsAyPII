@@ -25,7 +25,6 @@ package net.datastructures;
 import java.util.Iterator;
 import java.util.List;         // for use as snapshot iterator
 import java.util.ArrayList;    // for use as snapshot iterator
-import jdk.jshell.spi.ExecutionControl;
 
 /**
  * An abstract base class providing some functionality of the Tree interface.
