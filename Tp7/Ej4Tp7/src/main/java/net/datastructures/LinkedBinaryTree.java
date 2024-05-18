@@ -369,26 +369,26 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> implements Clonea
         if (getClass() != obj.getClass()) {
             return false;
         }
-        LinkedBinaryTree<?> other = (LinkedBinaryTree<?>) obj;
-        if (this.size != other.size) {
-            System.out.println("Size");
+        return equalsHelper(root, ((LinkedBinaryTree) obj).root);
+    }
+
+    /**
+     * Metodo recursivo para realizar el equals
+     *
+     * @param p1 posicion del arbol original
+     * @param p2 posicion del arbol con el que se compara
+     * @return True si los arboles son iguales, False si son distintos
+     */
+    private boolean equalsHelper(Position<E> p1, Position<E> p2) {
+        if (p1 == null && p2 == null) {
+            return true;
+        }
+        if (p1 == null || p2 == null) {
             return false;
         }
-        Iterator<E> ite = iterator();
-        Iterator<E> otherite = (Iterator<E>) other.iterator();
-        while (ite.hasNext() && otherite.hasNext()) {
-            if (!ite.next().equals(otherite.next())) {
-                return false;
-            }
-        }
-
-        //There still are elements left in one of them
-        if (ite.hasNext() || otherite.hasNext()) {
-            System.out.println("Elementos restantes");
-            return false;
-        }
-
-        return true;
+        return p1.getElement().equals(p2.getElement())
+                && equalsHelper(left(p1), left(p2))
+                && equalsHelper(right(p1), right(p2));
     }
 
     /**
