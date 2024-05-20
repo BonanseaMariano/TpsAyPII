@@ -36,20 +36,20 @@ import net.datastructures.Map;
 public class PalabrasReservadas {
 
     static String[] palabrasReservadas = {
-        "abstract", "continue", "for", "new", "switch", "assert", "default",
-        "goto", "package", "synchronized", "boolean", "do", "if", "private",
-        "this", "break", "double", "implements", "protected", "throw", "byte",
-        "else", "import", "public", "throws", "case", "enum", "instanceof",
-        "return", "transient", "catch", "extends", "int", "short", "try",
-        "char", "final", "interface", "static", "void", "class", "finally",
-        "long", "strictfp", "volatile", "const", "float", "native", "super",
-        "while"
+            "abstract", "continue", "for", "new", "switch", "assert", "default",
+            "goto", "package", "synchronized", "boolean", "do", "if", "private",
+            "this", "break", "double", "implements", "protected", "throw", "byte",
+            "else", "import", "public", "throws", "case", "enum", "instanceof",
+            "return", "transient", "catch", "extends", "int", "short", "try",
+            "char", "final", "interface", "static", "void", "class", "finally",
+            "long", "strictfp", "volatile", "const", "float", "native", "super",
+            "while"
     };
 
     static Map<String, Integer> freq;
 
     public static void main(String[] args) {
-        if (args.length < 1 || args.length > 1) {
+        if (args.length != 1) {
             throw new IllegalArgumentException("Cantidad de argumentos incorrecta");
         }
 
@@ -73,6 +73,9 @@ public class PalabrasReservadas {
         printWords();
     }
 
+    /**
+     * Initializes the frequency map with all reserved words and sets their initial frequency to 0.
+     */
     public static void setUp() {
         freq = new ChainHashMap<>();  // or any concrete map
         for (String palabrasReservada : palabrasReservadas) {
@@ -80,6 +83,11 @@ public class PalabrasReservadas {
         }
     }
 
+    /**
+     * Checks if the given word is a reserved word and updates its frequency in the frequency map.
+     *
+     * @param word the word to be checked
+     */
     public static void checkWord(String word) {
         for (String palabrasReservada : palabrasReservadas) {
             if (palabrasReservada.equals(word)) {

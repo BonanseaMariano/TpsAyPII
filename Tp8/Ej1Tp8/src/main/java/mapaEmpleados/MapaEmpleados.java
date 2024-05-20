@@ -8,17 +8,16 @@ import net.datastructures.*;
 import empleados.*;
 
 /**
- *
  * @author Mariano
  */
 public class MapaEmpleados {
 
     static Map<String, Employee> mapaE;
-    static Employee empleados[] = new Employee[]{
-        new BasePlusCommissionEmployee("Mariano", "Bonansea", "41127031", 20, 40, 200000),
-        new CommissionEmployee("Carlos", "Carlos", "1234", 20, 100000),
-        new HourlyEmployee("Diego", "Maradona", "4321", 500000, 10),
-        new SalariedEmployee("Pedro", "Pepon", "1111", 150000)
+    static Employee[] empleados = new Employee[]{
+            new BasePlusCommissionEmployee("Mariano", "Bonansea", "41127031", 20, 40, 200000),
+            new CommissionEmployee("Carlos", "Carlos", "1234", 20, 100000),
+            new HourlyEmployee("Diego", "Maradona", "4321", 500000, 10),
+            new SalariedEmployee("Pedro", "Pepon", "1111", 150000)
     };
 
     public static void main(String[] args) {
