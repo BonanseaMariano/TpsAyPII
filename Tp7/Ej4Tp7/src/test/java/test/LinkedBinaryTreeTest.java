@@ -6,13 +6,15 @@ package test;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 import net.datastructures.*;
 import org.junit.jupiter.api.BeforeEach;
 
 /**
- *
  * @author Mariano
  */
 public class LinkedBinaryTreeTest {
