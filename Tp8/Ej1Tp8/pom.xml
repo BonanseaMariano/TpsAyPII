@@ -10,4 +10,12 @@
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>Ej1Tp8.Ej1Tp8</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>

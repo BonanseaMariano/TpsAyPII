@@ -6,10 +6,12 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../PruebaModulo/pom.xml" />
+        <option value="$PROJECT_DIR$/../Ej1Tp8/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/../Ej1Tp8/pom.xml" />
         <option value="$PROJECT_DIR$/../PruebaModulo/pom.xml" />
       </set>
     </option>

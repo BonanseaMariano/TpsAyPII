@@ -20,11 +20,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.datastructures;
+package datastructures;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;         // for use as snapshot iterator
-import java.util.ArrayList;    // for use as snapshot iterator
+import java.util.List;
 
 /**
  * An abstract base class providing some functionality of the Tree interface.

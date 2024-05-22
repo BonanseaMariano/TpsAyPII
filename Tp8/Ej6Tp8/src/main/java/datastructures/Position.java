@@ -20,45 +20,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.datastructures;
+package datastructures;
 
 /**
- * Interface for a queue: a collection of elements that are inserted
- * and removed according to the first-in first-out principle. Although
- * similar in purpose, this interface differs from java.util.Queue.
+ * An interface for a position which is an abstraction for the
+ * location at which a single element is stored in a positional
+ * container.
  *
  * @author Michael T. Goodrich
  * @author Roberto Tamassia
  * @author Michael H. Goldwasser
  */
-public interface Queue<E> {
+public interface Position<E> {
   /**
-   * Returns the number of elements in the queue.
-   * @return number of elements in the queue
+   * Returns the element stored at this position.
+   *
+   * @return the stored element
+   * @throws IllegalStateException if position no longer valid
    */
-  int size();
-
-  /**
-   * Tests whether the queue is empty.
-   * @return true if the queue is empty, false otherwise
-   */
-  boolean isEmpty();
-
-  /**
-   * Inserts an element at the rear of the queue.
-   * @param e  the element to be inserted
-   */
-  void enqueue(E e);
-
-  /**
-   * Returns, but does not remove, the first element of the queue.
-   * @return the first element of the queue (or null if empty)
-   */
-  E first();
-
-  /**
-   * Removes and returns the first element of the queue.
-   * @return element removed (or null if empty)
-   */
-  E dequeue();
+  E getElement() throws IllegalStateException;
 }

@@ -28,7 +28,7 @@ import java.util.ArrayList;
 /**
  * An abstract base class providing some functionality of the BinaryTree
  * interface.
- *
+ * <p>
  * The following five methods remain abstract, and must be implemented by a
  * concrete subclass: size, root, parent, left, right.
  *
@@ -45,7 +45,7 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E>
      * @param p A valid Position within the tree
      * @return the Position of the sibling (or null if no sibling exists)
      * @throws IllegalArgumentException if p is not a valid Position for this
-     * tree
+     *                                  tree
      */
     @Override
     public Position<E> sibling(Position<E> p) {
@@ -68,7 +68,7 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E>
      * @param p A valid Position within the tree
      * @return number of children of Position p
      * @throws IllegalArgumentException if p is not a valid Position for this
-     * tree.
+     *                                  tree.
      */
     @Override
     public int numChildren(Position<E> p) {
@@ -89,7 +89,7 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E>
      * @param p A valid Position within the tree
      * @return iterable collection of the Positions of p's children
      * @throws IllegalArgumentException if p is not a valid Position for this
-     * tree.
+     *                                  tree.
      */
     @Override
     public Iterable<Position<E>> children(Position<E> p) {
@@ -107,7 +107,7 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E>
      * Adds positions of the subtree rooted at Position p to the given snapshot
      * using an inorder traversal
      *
-     * @param p Position serving as the root of a subtree
+     * @param p        Position serving as the root of a subtree
      * @param snapshot a list to which results are appended
      */
     private void inorderSubtree(Position<E> p, List<Position<E>> snapshot) {
@@ -158,9 +158,46 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E>
     public List<String> postfixExpression(Map<String, Double> v) {
         List<String> result = new ArrayList<>();
         for (Position<E> position : postorder()) {
-            
+            switch ((String) position.getElement()) {
+                case "+":
+                case "-":
+                case "*":
+                case "/":
+                    result.add(position.getElement().toString());
+                    break;
+                default:
+                    if (isNumeric((String) position.getElement())) {
+                        result.add(position.getElement().toString());
+                    } else {
+                        boolean ban = false;
+                        for (String e : v.keySet()) {
+                            if (e.equals(position.getElement())) {
+                                result.add(v.get(e).toString());
+                                ban = true;
+                            }
+                        }
+                        if (!ban) {
+                            throw new ArithmeticException("La variable " + position.getElement() + " no existe");
+                        }
+                        break;
+                    }
+            }
         }
-        return null;
+        return result;
     }
 
+    /**
+     * Checks if a given string is a valid numeric value.
+     *
+     * @param str the string to be checked
+     * @return true if the string is a valid numeric value, false otherwise
+     */
+    private boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }

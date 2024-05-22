@@ -12,5 +12,8 @@
         <module name="Ej2Tp8" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Ej1Tp8" target="18" />
+    </bytecodeTargetLevel>
   </component>
 </project>

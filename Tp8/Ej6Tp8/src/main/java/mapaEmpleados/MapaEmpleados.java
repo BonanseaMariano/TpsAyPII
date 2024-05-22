@@ -4,21 +4,22 @@
  */
 package mapaEmpleados;
 
-import net.datastructures.*;
+import datastructures.*;
 import empleados.*;
 
+
 /**
- *
  * @author Mariano
  */
 public class MapaEmpleados {
 
     static SortedMap<String, Employee> mapaE;
+
     static Employee empleados[] = new Employee[]{
-        new BasePlusCommissionEmployee("Mariano", "Bonansea", "1", 20, 40, 200000),
-        new CommissionEmployee("Carlos", "Carlos", "2", 20, 100000),
-        new HourlyEmployee("Diego", "Maradona", "3", 500000, 10),
-        new SalariedEmployee("Pedro", "Pepon", "4", 150000)
+            new BasePlusCommissionEmployee("Mariano", "Bonansea", "10", 20, 40, 200000),
+            new CommissionEmployee("Carlos", "Carlos", "20", 20, 100000),
+            new HourlyEmployee("Diego", "Maradona", "30", 500000, 10),
+            new SalariedEmployee("Pedro", "Pepon", "40", 150000)
     };
 
     public static void main(String[] args) {
@@ -42,20 +43,20 @@ public class MapaEmpleados {
         System.out.println("\n\t---- LastEntry ----");
         System.out.println(mapaE.lastEntry());
 
-        System.out.println("\n\t---- CeilingEntry de 4 ----");
-        System.out.println(mapaE.ceilingEntry("4"));
+        System.out.println("\n\t---- CeilingEntry de 29 ----");
+        System.out.println(mapaE.ceilingEntry("29"));
 
-        System.out.println("\n\t---- FloorEntry de 1 ----");
-        System.out.println(mapaE.floorEntry("1"));
+        System.out.println("\n\t---- FloorEntry de 29 ----");
+        System.out.println(mapaE.floorEntry("29"));
 
-        System.out.println("\n\t---- HigherEntry de 1 ----");
-        System.out.println(mapaE.higherEntry("1"));
+        System.out.println("\n\t---- HigherEntry de 29 ----");
+        System.out.println(mapaE.higherEntry("29"));
 
-        System.out.println("\n\t---- LowerEntry de 4 ----");
-        System.out.println(mapaE.lowerEntry("4"));
+        System.out.println("\n\t---- LowerEntry de 29 ----");
+        System.out.println(mapaE.lowerEntry("29"));
 
-        System.out.println("\n\t---- Submap entre 1 y 3 ----");
-        for (Entry<String, Employee> e : mapaE.subMap("1", "3")) {
+        System.out.println("\n\t---- Submap entre 10 y 30 ----");
+        for (Entry<String, Employee> e : mapaE.subMap("10", "30")) {
             System.out.println(e);
         }
 

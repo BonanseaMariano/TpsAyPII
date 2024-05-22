@@ -20,10 +20,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.datastructures;
+package datastructures;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * An abstract base class providing some functionality of the BinaryTree interface.
