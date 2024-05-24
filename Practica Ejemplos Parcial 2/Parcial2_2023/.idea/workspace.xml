@@ -5,81 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="937818d0-c502-4831-b030-c4e9f8727ce3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/AVLTreeMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/AbstractBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/AbstractHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/AbstractMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/AbstractPriorityQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/AbstractSortedMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/AbstractTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/AdaptablePriorityQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/AdjacencyMapGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/ArrayList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/ArrayQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/ArrayStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/BinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/ChainHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/CircularQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/CircularlyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/DefaultComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/Deque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/DoublyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/Edge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/Entry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/Graph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/GraphAlgorithms.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/GraphExamples.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/HeapAdaptablePriorityQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/HeapPriorityQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/LinkedBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/LinkedCircularQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/LinkedPositionalList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/LinkedQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/LinkedStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/List.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/Map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/Partition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/PositionalList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/PriorityQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/ProbeHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/Queue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/RBTreeMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/SinglyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/SortedMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/SortedPriorityQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/SortedTableMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/SplayTreeMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/Tree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/TreeMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/UnsortedPriorityQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/UnsortedTableMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datastructures/Vertex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/ArrayQueueTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej6Tp6/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej6Tp6/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej6Tp6/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej6Tp6/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej6Tp6/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej6Tp6/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej6Tp6/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej7Tp6/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej7Tp6/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej7Tp6/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej7Tp6/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej7Tp6/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej7Tp6/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Tp6/Ej7Tp6/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tp6/Ej7Tp6/src/main/java/list/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tp6/Ej7Tp6/src/main/java/list/DoublyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tp6/Ej7Tp6/src/main/java/list/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tp6/Ej7Tp6/src/main/java/list/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tp8/Ej4y5Tp8/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tp8/Ej4y5Tp8/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/TestBranchMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/TestComplete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Tp7/Ej5Tp7/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Tp7/Ej5Tp7/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Tp7/Ej5Tp7/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Tp7/Ej5Tp7/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Tp7/Ej5Tp7/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Tp7/Ej5Tp7/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Tp7/Ej5Tp7/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Codigos_Godall/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Codigos_Godall/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Codigos_Godall/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Codigos_Godall/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datastructures/AbstractBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datastructures/AbstractBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datastructures/AbstractTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datastructures/AbstractTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datastructures/ArrayQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datastructures/ArrayQueue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +55,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2gplWK2mtTjXNqjP459OKaTUxET" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -119,7 +65,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.TestBranchMap.executor": "Run",
     "JUnit.TestArrayQueue.executor": "Run",
+    "JUnit.TestComplete.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -127,12 +75,14 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Usuario/OneDrive/Documents/UNPSJB/TpsAyPII/Practica Ejemplos Parcial 2/Parcial2_2023/src/main/java",
+    "last_opened_file_path": "C:/Users/maria/Desktop/Algoritmica y programacion II Codigo/Tps/Tp7/Ej5Tp7",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\maria\Desktop\Algoritmica y programacion II Codigo\Tps\Practica Ejemplos Parcial 2\Parcial2_2023\src\test\java" />
+      <recent name="C:\Users\maria\Desktop\Algoritmica y programacion II Codigo\Tps\Practica Ejemplos Parcial 2\Parcial2_2023\src\test\java\test" />
       <recent name="C:\Users\Usuario\OneDrive\Documents\UNPSJB\TpsAyPII\Practica Ejemplos Parcial 2\Parcial2_2023\src\main\java" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -142,7 +92,20 @@
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TestBranchMap">
+    <configuration name="TestBranchMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.TestBranchMap" />
+      <module name="Parcial2_2023" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestArrayQueue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Parcial2_2023" />
       <extension name="coverage">
@@ -158,8 +121,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestComplete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Parcial2_2023" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TestComplete" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestBranchMap" />
+        <item itemvalue="JUnit.TestComplete" />
         <item itemvalue="JUnit.TestArrayQueue" />
       </list>
     </recent_temporary>

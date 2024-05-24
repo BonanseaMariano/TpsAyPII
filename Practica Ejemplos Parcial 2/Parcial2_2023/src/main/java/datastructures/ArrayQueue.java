@@ -22,6 +22,9 @@
  */
 package datastructures;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 /**
  * Implementation of the queue ADT using a fixed-length array. All
  * operations are performed in constant time. An exception is thrown
@@ -161,23 +164,23 @@ public class ArrayQueue<E> implements Queue<E> {
      * @param obj cola a verificar
      * @return true si obj es igual o false si no lo es
      */
+    @Override
     public boolean equals(Object obj) {
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        if (isEmpty() && ((ArrayQueue) obj).isEmpty()) {
-            return true;
-        }
-        if (this.size() != ((ArrayQueue) obj).size()) {
-            return false;
-        }
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        ArrayQueue other = (ArrayQueue) obj;
+        if (sz != other.sz) return false;
+
         int k = f;
+        int l = other.f;
         for (int i = 0; i < sz; i++) {
-            if (!data[k].equals(((ArrayQueue) obj).data[k])) {
-                return false;
-            }
+            if (data[k] == null && other.data[l] != null) return false;
+            if (data[k] != null && !data[k].equals(other.data[l])) return false;
             k = (k + 1) % data.length;
+            l = (l + 1) % other.data.length;
         }
         return true;
     }
+
 }

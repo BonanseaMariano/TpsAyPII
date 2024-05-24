@@ -122,4 +122,39 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E>
   public Iterable<Position<E>> positions() {
     return inorder();
   }
+
+  /**
+   * Verifica si el arbol t es un arbol completo
+   *
+   * @return true si es un arbol completo o false si no lo es
+   */
+  public boolean complete() {
+    if (isEmpty())
+      return true;
+
+    int altura = height(root());
+    int maxNodos = (int) Math.pow(2, altura + 1) - 1;
+
+    List<Position<E>> p = new ArrayList<Position<E>>(maxNodos);
+    for (int i = 0; i < maxNodos; i++)
+      p.add(i, null);
+
+    p.add(0, root());
+    int recorrido = (int) Math.pow(2, altura) - 1; //El +1 no esta aca pq no hace falta evaluar la ultima posicion
+    for (int i = 0; i < recorrido; i++) {
+      if (p.get(i) != null) {
+        p.set(i * 2 + 1, left(p.get(i)));
+        p.set(i * 2 + 2, right(p.get(i)));
+      }
+    }
+    boolean hasNull = false;
+    for (int i = 0; i < maxNodos; i++) {
+      if (hasNull && p.get(i) != null)
+        return false;
+      if (p.get(i) == null)
+        hasNull = true;
+    }
+    return true;
+  }
+
 }
