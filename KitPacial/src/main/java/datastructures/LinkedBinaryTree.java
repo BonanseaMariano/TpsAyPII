@@ -22,8 +22,6 @@
  */
 package datastructures;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Concrete implementation of a binary tree using a node-based, linked structure.
@@ -486,14 +484,78 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> implements Clonea
      * @return Lista que contiene la representación de un árbol binario.
      */
     public java.util.List<E> ListBinaryTree() {
-        java.util.List<E> snapshot = new ArrayList<>();
+        java.util.List<E> snapshot = new java.util.ArrayList<>();
         for (Position<E> p : breadthfirst()) {
             snapshot.add(p.getElement());
-
             if (p != root && sibling(p) == null) {
                 snapshot.add(null);
             }
         }
-        return (List<E>) snapshot;
+        return (java.util.List<E>) snapshot;
     }
+
+    /**
+     * Verifica si el árbol t es un subArbol. Es decir que el árbol t está contenido
+     * dentro del árbol
+     *
+     * @param t árbol a verificar
+     * @return true si t es una subArbol o false si no lo es.
+     */
+    /**
+     * Ejemplo, dado el árbol:
+     * <p>
+     * 1
+     * <p>
+     * / \
+     * <p>
+     * 2 3
+     * <p>
+     * / \ / \
+     * <p>
+     * 4 5 6 7
+     * <p>
+     * El siguiente árbol es un subArbol:
+     * <p>
+     * 3
+     * <p>
+     * / \
+     * <p>
+     * 6 7
+     */
+    public boolean isSubtree(LinkedBinaryTree<E> t) {
+        if (t.size > size)
+            return false;
+
+        int i;
+        ArrayList<E> l1 = new ArrayList<>();
+        ArrayList<E> l2 = new ArrayList<>();
+
+        i = 0;
+        for (Position<E> e : inorder())
+            l1.add(i++, e.getElement());
+
+        i = 0;
+        for (Position<E> e : t.inorder())
+            l2.add(i++, e.getElement());
+
+        if (!l1.isSubList(l2))
+            return false;
+
+        l1 = new ArrayList<>();
+        l2 = new ArrayList<>();
+
+        i = 0;
+        for (Position<E> e : postorder())
+            l1.add(i++, e.getElement());
+
+        i = 0;
+        for (Position<E> e : t.postorder())
+            l2.add(i++, e.getElement());
+
+        if (!l1.isSubList(l2))
+            return false;
+
+        return true;
+    }
+
 } //----------- end of LinkedBinaryTree class -----------

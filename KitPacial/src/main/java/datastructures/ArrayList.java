@@ -132,6 +132,7 @@ public class ArrayList<E> implements List<E> {
         size++;
     }
 
+
     /**
      * Removes and returns the element at the given index, shifting all subsequent
      * elements in the list one position closer to the front.
@@ -254,6 +255,30 @@ public class ArrayList<E> implements List<E> {
         } catch (IndexOutOfBoundsException ex) {
             return false;
         }
+    }
+
+    /**
+     * Verifica si la lista l es una subLista. Es decir que la lista l está
+     * contenida dentro de la lista
+     *
+     * @param l lista a verificar
+     * @return true si l es una subLista o false si no lo es.
+     */
+    public boolean isSubList(List<E> l) {
+        if (l.size() > size())
+            return false;
+        boolean salir = false;
+        for (int i = 0; i < size() - l.size() + 1; i++) {
+            salir = false;
+            for (int j = 0; j < l.size() && !salir; j++) {
+                if (!get(j + i).equals(l.get(j)))
+                    salir = true;
+            }
+            if (!salir) {
+                return true;
+            }
+        }
+        return false;
     }
 
     //---------------- nested ArrayIterator class ----------------
