@@ -486,8 +486,12 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> implements Clonea
      * @return Lista que contiene la representación de un árbol binario.
      */
     public List<E> ListBinaryTree() {
+        if (isEmpty())
+            return new ArrayList<>();
+
         int capacity = (int) (Math.pow(2, height(root) + 1) - 1);
         List<Node<E>> snapshot = new ArrayList<>(capacity);
+
         for (int i = 0; i < capacity; i++) {
             snapshot.add(0, null);
         }
