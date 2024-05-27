@@ -254,52 +254,6 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
         return position(node.getNext());
     }
 
-    /**
-     * Returns the index of the given Position p in the list. If the Position is not valid, -1 is returned.
-     *
-     * @param p the Position to find the index of
-     * @return the index of the given Position p, or -1 if the Position is not valid
-     */
-    public int indexOf(Position<E> p) {
-        Iterator<E> ite = iterator();
-        int cont = 0;
-
-        //El manejo de la posicion no valida ya se puede realizar con este metodo
-        try {
-            Node<E> node = validate(p);
-        } catch (IllegalArgumentException e) {
-            return -1;
-        }
-
-        //Posicion valida
-        while (ite.hasNext()) {
-            if (ite.next().equals(p.getElement())) {
-                return cont;
-            }
-            cont++;
-        }
-
-        //Return para evitar errores
-        return -1;
-    }
-
-    /**
-     * Finds the position of the given element in the linked list.
-     *
-     * @param e the element to search for
-     * @return the position of the element if found, null otherwise
-     */
-    public Position<E> findPosition(E e) {
-        Position<E> posX = first();
-
-        while (posX != null) {
-            if (posX.getElement().equals(e)) {
-                return posX;
-            }
-            posX = after(posX);
-        }
-        return null;
-    }
     // private utilities
 
     /**
@@ -529,4 +483,95 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
         sb.append(")");
         return sb.toString();
     }
+
+    /**
+     * Returns the index of the given Position p in the list. If the Position is not valid, -1 is returned.
+     *
+     * @param p the Position to find the index of
+     * @return the index of the given Position p, or -1 if the Position is not valid
+     */
+    public int indexOf(Position<E> p) {
+        Iterator<E> ite = iterator();
+        int cont = 0;
+
+        //El manejo de la posicion no valida ya se puede realizar con este metodo
+        try {
+            Node<E> node = validate(p);
+        } catch (IllegalArgumentException e) {
+            return -1;
+        }
+
+        //Posicion valida
+        while (ite.hasNext()) {
+            if (ite.next().equals(p.getElement())) {
+                return cont;
+            }
+            cont++;
+        }
+
+        //Return para evitar errores
+        return -1;
+    }
+
+    /**
+     * Finds the position of the given element in the linked list.
+     *
+     * @param e the element to search for
+     * @return the position of the element if found, null otherwise
+     */
+    public Position<E> findPosition(E e) {
+        Position<E> posX = first();
+
+        while (posX != null) {
+            if (posX.getElement().equals(e)) {
+                return posX;
+            }
+            posX = after(posX);
+        }
+        return null;
+    }
+
+    /**
+     * Remueve los elementos especificados en fromIndex inclusive (incluye la
+     * posición dada) y toIndex exclusive (es uno menor a la posición dada). Si
+     * fromIndex y toIndex son iguales, no remueve ningún elemento.
+     *
+     * @param fromIndex elemento inicial inclusive (incluye la posición dada)
+     * @param toIndex   elemento final exclusive (es uno menor a la posición dada)
+     * @throws IllegalArgumentException  si fromIndex > toIndex
+     * @throws IndexOutOfBoundsException si (fromIndex < 0 || toIndex > size)
+     */
+    public void removeAll(int fromIndex, int toIndex) {
+        if (fromIndex > toIndex) throw new IllegalArgumentException("fromIndex > toIndex");
+        if (fromIndex < 0 || toIndex > size) throw new IndexOutOfBoundsException();
+        Position<E> cursor = first();
+        //Voy con el cursor hasta que llego a la posicion indicada
+        int i = 0;
+        for (i = 0; i < fromIndex - 1; i++) {
+            cursor = after(cursor);
+        }
+        while (i < toIndex - 1) {
+            remove(after(cursor));
+            i++;
+        }
+    }
+
+    /**
+     * Intercambia todos los elementos de la lista sin modificar sus posiciones
+     */
+    void reverse() {
+        if (size > 1) {
+            Position<E> cursor = first();
+            Position<E> cursor2 = last();
+            while (cursor != cursor2 && after(cursor2) != cursor) {
+                E aux = cursor.getElement();
+                set(cursor, cursor2.getElement());
+                set(cursor2, aux);
+                cursor = after(cursor);
+                cursor2 = before(cursor2);
+            }
+        }
+
+    }
+
 }

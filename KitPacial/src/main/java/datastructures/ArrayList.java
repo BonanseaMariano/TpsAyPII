@@ -172,6 +172,80 @@ public class ArrayList<E> implements List<E> {
         data = temp;                               // start using the new array
     }
 
+    //---------------- nested ArrayIterator class ----------------
+
+    /**
+     * A (nonstatic) inner class. Note well that each instance contains an implicit
+     * reference to the containing list, allowing it to access the list's members.
+     */
+    private class ArrayIterator implements Iterator<E> {
+        /**
+         * Index of the next element to report.
+         */
+        private int j = 0;                   // index of the next element to report
+        private boolean removable = false;   // can remove be called at this time?
+
+        /**
+         * Tests whether the iterator has a next object.
+         *
+         * @return true if there are further objects, false otherwise
+         */
+        public boolean hasNext() {
+            return j < size;
+        }   // size is field of outer instance
+
+        /**
+         * Returns the next object in the iterator.
+         *
+         * @return next object
+         * @throws NoSuchElementException if there are no further elements
+         */
+        public E next() throws NoSuchElementException {
+            if (j == size) throw new NoSuchElementException("No next element");
+            removable = true;   // this element can subsequently be removed
+            return data[j++];   // post-increment j, so it is ready for future call to next
+        }
+
+        /**
+         * Removes the element returned by most recent call to next.
+         *
+         * @throws IllegalStateException if next has not yet been called
+         * @throws IllegalStateException if remove was already called since recent next
+         */
+        public void remove() throws IllegalStateException {
+            if (!removable) throw new IllegalStateException("nothing to remove");
+            ArrayList.this.remove(j - 1);  // that was the last one returned
+            j--;                         // next element has shifted one cell to the left
+            removable = false;           // do not allow remove again until next is called
+        }
+    } //------------ end of nested ArrayIterator class ------------
+
+    /**
+     * Returns an iterator of the elements stored in the list.
+     *
+     * @return iterator of the list's elements
+     */
+    @Override
+    public Iterator<E> iterator() {
+        return new ArrayIterator();     // create a new instance of the inner class
+    }
+
+    /**
+     * Produces a string representation of the contents of the indexed list.
+     * This exists for debugging purposes only.
+     *
+     * @return textual representation of the array list
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder("(");
+        for (int j = 0; j < size; j++) {
+            if (j > 0) sb.append(", ");
+            sb.append(data[j]);
+        }
+        sb.append(")");
+        return sb.toString();
+    }
+
     /**
      * Clears the list by removing all elements from it.
      * <p>
@@ -281,77 +355,24 @@ public class ArrayList<E> implements List<E> {
         return false;
     }
 
-    //---------------- nested ArrayIterator class ----------------
-
     /**
-     * A (nonstatic) inner class. Note well that each instance contains an implicit
-     * reference to the containing list, allowing it to access the list's members.
-     */
-    private class ArrayIterator implements Iterator<E> {
-        /**
-         * Index of the next element to report.
-         */
-        private int j = 0;                   // index of the next element to report
-        private boolean removable = false;   // can remove be called at this time?
-
-        /**
-         * Tests whether the iterator has a next object.
-         *
-         * @return true if there are further objects, false otherwise
-         */
-        public boolean hasNext() {
-            return j < size;
-        }   // size is field of outer instance
-
-        /**
-         * Returns the next object in the iterator.
-         *
-         * @return next object
-         * @throws NoSuchElementException if there are no further elements
-         */
-        public E next() throws NoSuchElementException {
-            if (j == size) throw new NoSuchElementException("No next element");
-            removable = true;   // this element can subsequently be removed
-            return data[j++];   // post-increment j, so it is ready for future call to next
-        }
-
-        /**
-         * Removes the element returned by most recent call to next.
-         *
-         * @throws IllegalStateException if next has not yet been called
-         * @throws IllegalStateException if remove was already called since recent next
-         */
-        public void remove() throws IllegalStateException {
-            if (!removable) throw new IllegalStateException("nothing to remove");
-            ArrayList.this.remove(j - 1);  // that was the last one returned
-            j--;                         // next element has shifted one cell to the left
-            removable = false;           // do not allow remove again until next is called
-        }
-    } //------------ end of nested ArrayIterator class ------------
-
-    /**
-     * Returns an iterator of the elements stored in the list.
+     * Retorna una lista de enteros con las posiciones donde se encontró el elemento e.
      *
-     * @return iterator of the list's elements
+     * @param e elemento a buscar
+     * @return lista de enteros con las posiciones donde se encontró el elemento e.
+     * Si no se encontró el elemento e retorna una lista vacía.
      */
-    @Override
-    public Iterator<E> iterator() {
-        return new ArrayIterator();     // create a new instance of the inner class
+    public List<Integer> posContains(E e) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            if (data[i] == null && e == null) {
+                list.add(list.size(), i);
+            }
+            if (data[i] != null && data[i].equals(e)) {
+                list.add(list.size(), i);
+            }
+        }
+        return list;
     }
 
-    /**
-     * Produces a string representation of the contents of the indexed list.
-     * This exists for debugging purposes only.
-     *
-     * @return textual representation of the array list
-     */
-    public String toString() {
-        StringBuilder sb = new StringBuilder("(");
-        for (int j = 0; j < size; j++) {
-            if (j > 0) sb.append(", ");
-            sb.append(data[j]);
-        }
-        sb.append(")");
-        return sb.toString();
-    }
 }
