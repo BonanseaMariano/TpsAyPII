@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e06060f4-d3dc-405f-a81e-6b5d781f305b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/KitPacial/Consignas de parciales anteriores/parcial2-2022.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KitPacial/Consignas de parciales anteriores/parcial2-2023.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KitPacial/src/test/java/datastructures/LinkedBinaryTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/arrays/CaesarCipher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/arrays/DeepClone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/arrays/GameEntry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/arrays/InsertionSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/arrays/Scoreboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/arrays/TicTacToe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/asymptotics/ArrayFind.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/asymptotics/ArrayMax.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/asymptotics/DisjointSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/asymptotics/Exercises.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/asymptotics/PrefixAverage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/asymptotics/StringExperiment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/asymptotics/Uniqueness.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/AbstractProgression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/ArithmeticProgression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/BoxedItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/BoxedItem2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/ExceptionDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/FibonacciProgression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/GenericDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/GeometricProgression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/Insurable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/Maryland.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/ObjectPair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/Photograph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/Portfolio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/PredatoryCreditCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/Progression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/Sellable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/TestProgression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/design/Transportable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/lists/FavoritesList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/lists/FavoritesListMTF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/lists/InsertionSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/lists/IteratorDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/maps/CostPerformanceDatabase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/maps/HashMultimap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/maps/WordCount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/pq/PQSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/pq/StringLengthComparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/ArrayFind.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/ArrayMax.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/ArrayScale.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/ArraySum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/ArraySumForeach.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/Counter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/CounterDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/CreditCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/EnumDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/InputExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/PrimitiveDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/Robot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/Universe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/primer/WrapperDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/queues/Josephus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/recursion/ArrayReverse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/recursion/ArraySum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/recursion/BinarySearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/recursion/DiskSpace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/recursion/Factorial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/recursion/Fibonacci.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/recursion/Power.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/recursion/Ruler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/recursion/Unique3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/sorting/MergeSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/sorting/QuickSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/stacks/MatchDelimiters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/stacks/MatchHTML.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/stacks/ReverseWithStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/text/LCS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/text/MatrixChain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/text/PatternMatching.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/dsaj/trees/TraversalExamples.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/AVLTreeMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/AbstractBinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/AbstractHashMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/AbstractMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/AbstractPriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/AbstractSortedMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/AbstractTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/AdaptablePriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/AdjacencyMapGraph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/ArrayList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/ArrayQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/ArrayStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/BinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/ChainHashMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/CircularQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/CircularlyLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/DefaultComparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/Deque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/DoublyLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/Edge.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/Entry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/Graph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/GraphAlgorithms.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/GraphExamples.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/HeapAdaptablePriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/HeapPriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/LinkedBinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/LinkedCircularQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/LinkedPositionalList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/LinkedQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/LinkedStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/Map.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/Partition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/PositionalList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/PriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/ProbeHashMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/Queue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/RBTreeMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/SinglyLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/SortedMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/SortedPriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/SortedTableMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/SplayTreeMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/Stack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/Tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/TreeMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/UnsortedPriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/UnsortedTableMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codigos_Goodall_Default/src/main/java/net/datastructures/Vertex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KitPacial/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/KitPacial/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KitPacial/src/main/java/datastructures/LinkedBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/KitPacial/src/main/java/datastructures/LinkedBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica Ejemplos Parcial 2/Parcial2_2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Practica Ejemplos Parcial 2/Parcial2_2023/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "BonanseaMariano"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:BonanseaMariano/TpsAyPII.git",
+    "accountId": "757ccc4a-d418-42e9-8b64-32c933e5c034"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2h1tCHHbfrS3VopmgcvtpkbiJm0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Usuario/OneDrive/Documents/UNPSJB/TpsAyPII"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e06060f4-d3dc-405f-a81e-6b5d781f305b" name="Changes" comment="" />
+      <created>1716773282051</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716773282051</updated>
+    </task>
+    <servers />
+  </component>
+</project>

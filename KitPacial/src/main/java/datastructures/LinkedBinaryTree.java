@@ -22,7 +22,6 @@
  */
 package datastructures;
 
-
 /**
  * Concrete implementation of a binary tree using a node-based, linked structure.
  *
@@ -556,6 +555,109 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> implements Clonea
             return false;
 
         return true;
+    }
+
+    /**
+     * Lista de los nodos que representan un camino.
+     *
+     * @return Lista con las posiciones de los nodos que representan un camino desde la posición
+     * from a la posición to.
+     */
+    public List<Position<E>> path(Position<E> from, Position<E> to) {
+        //Si alguna de las dos posiciones no se encuentra en el arbol lanzo excepcion
+        if (from == null || to == null || search(from.getElement()) == null || search(to.getElement()) == null) {
+            throw new IllegalArgumentException("El elemento no se encuentra en el arbol");
+        }
+        List<Position<E>> pathList = new ArrayList<>();
+        if (from == to) {
+            pathList.add(0, from);
+            return pathList;
+        }
+
+        //Si el from es mas abajo que el to
+        if (depth(from) >= depth(to)) {
+            pathList.add(pathList.size(), from);
+            //Subo en el arbol hasta que encuentro que pertenece a los hijos de donde estoy parado
+            boolean enHijos = false;
+            while (!enHijos) {
+                pathList.add(pathList.size(), from);
+                from = parent(from);
+
+                //Era un padre
+                if (from == to) {
+                    return pathList;
+                }
+
+                //Esto es un contains casero
+                for (Position<E> p : children(from)) {
+                    if (p == to) {
+                        enHijos = true;
+                        break;
+                    }
+                }
+            }
+
+            while (from != to) {
+                if (hijoIzqODer(from, to) == -1) {
+                    pathList.add(pathList.size(), from);
+                    from = left(from);
+                } else {
+                    pathList.add(pathList.size(), from);
+                    from = right(from);
+                }
+            }
+
+
+        } else { //EL to esta mas abajo que el from entonces
+            pathList.add(pathList.size(), to);
+            //Subo en el arbol hasta que encuentro que pertenece a los hijos de donde estoy parado
+            boolean enHijos = false;
+            while (!enHijos) {
+                pathList.add(pathList.size(), to);
+                to = parent(to);
+
+                //Era un padre
+                if (to == from) {
+                    return pathList;
+                }
+
+                //Esto es un contains casero
+                for (Position<E> p : children(to)) {
+                    if (p == from) {
+                        enHijos = true;
+                        break;
+                    }
+                }
+
+                while (to != from) {
+                    if (hijoIzqODer(to, from) == -1) {
+                        pathList.add(pathList.size(), to);
+                        to = left(to);
+                    } else {
+                        pathList.add(pathList.size(), to);
+                        to = right(to);
+                    }
+                }
+            }
+        }
+        return pathList;
+    }
+
+    /**
+     * Determines whether the given child position is on the left or right side of the parent position.
+     *
+     * @param padre the parent position
+     * @param hijo  the child position
+     * @return -1 if the child position is on the left side, 1 if it is on the right side
+     */
+    public int hijoIzqODer(Position<E> padre, Position<E> hijo) {
+        //Esto es un contains casero
+        for (Position<E> p : children(left(padre))) {
+            if (left(padre) == hijo || p == hijo) {
+                return -1;
+            }
+        }
+        return 1;
     }
 
 } //----------- end of LinkedBinaryTree class -----------
