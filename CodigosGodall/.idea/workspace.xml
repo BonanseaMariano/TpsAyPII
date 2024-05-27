@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2036702-0cc1-4246-86e9-34edfb3995d9" name="Changes" comment="&quot;Acomodando&quot;">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KitPacial/src/main/java/datastructures/LinkedBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../KitPacial/src/main/java/datastructures/LinkedBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../KitPacial/Consignas de parciales anteriores/~$rcial2-2021.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KitPacial/src/main/java/datastructures/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../KitPacial/src/main/java/datastructures/ArrayList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,15 +39,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/OneDrive/Documents/UNPSJB/TpsAyPII/CodigosGodall/src/main/java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Usuario/OneDrive/Documents/UNPSJB/TpsAyPII/CodigosGodall/src/main/java",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario\OneDrive\Documents\UNPSJB\TpsAyPII\CodigosGodall\src\main\java" />

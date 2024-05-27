@@ -464,13 +464,16 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> implements Clonea
      * @param index el indice donde se encuentra el elemento a colocar
      */
     private void createTreeRecursive(Position<E> p, E[] array, int index) {
+        //Esto es debido a la representacion de un arbol en un arreglo, se puede saber que nodo es hijo izquierdo o derecho (si no tiene hijo hay un null en esa posicion)
         int leftIndex = 2 * index + 1;
         int rightIndex = 2 * index + 2;
 
+        //Carga recursiva de los hijos izquierdos
         if (leftIndex < array.length && array[leftIndex] != null) {
             Position<E> leftChild = addLeft(p, array[leftIndex]);
             createTreeRecursive(leftChild, array, leftIndex);
         }
+        //Carga recursiva de los hijos derechos
         if (rightIndex < array.length && array[rightIndex] != null) {
             Position<E> rightChild = addRight(p, array[rightIndex]);
             createTreeRecursive(rightChild, array, rightIndex);
@@ -482,15 +485,42 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> implements Clonea
      *
      * @return Lista que contiene la representación de un árbol binario.
      */
-    public java.util.List<E> ListBinaryTree() {
-        java.util.List<E> snapshot = new java.util.ArrayList<>();
-        for (Position<E> p : breadthfirst()) {
-            snapshot.add(p.getElement());
-            if (p != root && sibling(p) == null) {
-                snapshot.add(null);
-            }
+    public List<E> ListBinaryTree() {
+        int capacity = (int) (Math.pow(2, height(root) + 1) - 1);
+        List<Node<E>> snapshot = new ArrayList<>(capacity);
+        for (int i = 0; i < capacity; i++) {
+            snapshot.add(0, null);
         }
-        return (java.util.List<E>) snapshot;
+
+        populateList(root, snapshot, 0);
+
+        //Cargo la lista a retornar con los ELEMENTOS de la auxiliar
+        List<E> list = new ArrayList<>();
+        for (int i = 0; i < snapshot.size(); i++) {
+            if (snapshot.get(i) == null) {
+                list.add(list.size(), null);
+            } else {
+                list.add(list.size(), (snapshot.get(i)).element);
+            }
+
+        }
+        return list;
+    }
+
+    /**
+     * Funcion recursiva para ListBinaryTree(), llena una lista auxiliar de nodos
+     *
+     * @return Lista que contiene la representación de un árbol binario.
+     */
+    private void populateList(Node<E> node, List<Node<E>> snapshot, int index) {
+        if (node == null) {
+            return;
+        }
+
+        snapshot.set(index, node);
+
+        populateList(node.getLeft(), snapshot, 2 * index + 1);
+        populateList(node.getRight(), snapshot, 2 * index + 2);
     }
 
     /**
@@ -499,27 +529,6 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> implements Clonea
      *
      * @param t árbol a verificar
      * @return true si t es una subArbol o false si no lo es.
-     */
-    /**
-     * Ejemplo, dado el árbol:
-     * <p>
-     * 1
-     * <p>
-     * / \
-     * <p>
-     * 2 3
-     * <p>
-     * / \ / \
-     * <p>
-     * 4 5 6 7
-     * <p>
-     * El siguiente árbol es un subArbol:
-     * <p>
-     * 3
-     * <p>
-     * / \
-     * <p>
-     * 6 7
      */
     public boolean isSubtree(LinkedBinaryTree<E> t) {
         if (t.size > size)

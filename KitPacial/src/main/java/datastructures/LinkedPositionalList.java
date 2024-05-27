@@ -564,9 +564,7 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
             Position<E> cursor = first();
             Position<E> cursor2 = last();
             while (cursor != cursor2 && after(cursor2) != cursor) {
-                E aux = cursor.getElement();
-                set(cursor, cursor2.getElement());
-                set(cursor2, aux);
+                set(cursor2, set(cursor, cursor2.getElement()));
                 cursor = after(cursor);
                 cursor2 = before(cursor2);
             }

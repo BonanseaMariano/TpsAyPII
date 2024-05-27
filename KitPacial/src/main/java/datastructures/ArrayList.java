@@ -375,4 +375,54 @@ public class ArrayList<E> implements List<E> {
         return list;
     }
 
+    /**
+     * Retorna una lista nueva con los elementos especificados en fromIndex inclusive
+     * (incluye la posición dada) y toIndex exclusive (es uno menor a la posición dada).
+     * Si fromIndex y toIndex son iguales, retorna una lista vacía.
+     *
+     * @param fromIndex elemento inicial inclusive (incluye la posición dada) de subList
+     * @param toIndex   elemento final exclusive (es uno menor a la posición dada) de subList
+     * @return una lista nueva con sus elementos dentro del rango especificado
+     * @throws IllegalArgumentException  si fromIndex > toIndex
+     * @throws IndexOutOfBoundsException si (fromIndex < 0 || toIndex > size)
+     */
+    List<E> subList(int fromIndex, int toIndex) {
+        if (fromIndex > toIndex)
+            throw new IllegalArgumentException();
+        if (fromIndex < 0 || toIndex > size)
+            throw new IndexOutOfBoundsException();
+        List<E> list = new ArrayList<>();
+        for (int i = fromIndex; i < toIndex; i++) {
+            list.add(list.size(), data[i]);
+        }
+        return list;
+    }
+
+    /**
+     * Inserta todos los elementos de la lista especificada en la lista actual en la
+     * posición indicada. Desplaza el elemento actual a la posición indicada (si
+     * hay) y todos los elementos siguientes a la derecha (incrementando sus
+     * índices). Los nuevos elementos aparecerán en la lista en el orden en que
+     * están en la lista pasada como argumento.
+     *
+     * @param index índice en el cual se inserta el primer elemento desde la lista
+     *              especificada
+     * @param list  lista que contiene los elementos a ser adicionados
+     * @throws IndexOutOfBoundsException lanza la excepción si el índice esta fuera de rango
+     *                                   (index < 0 || index > size)
+     */
+    void addAll(int index, List<E> list) {
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException();
+        if (size + list.size() > data.length) // Comprobar si hay suficiente capacidad
+            resize(2 * (size + list.size())); // Si no, redimensionar data
+        for (int i = size - 1; i >= index; i--) { // Mover elementos existentes a la derecha
+            data[i + list.size()] = data[i];
+        }
+        for (int i = 0; i < list.size(); i++) { // Agregar elementos de la lista pasada
+            data[index + i] = list.get(i);
+        }
+        size += list.size(); //Incremento el tamaño de la lista
+    }
+
 }
