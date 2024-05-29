@@ -21,14 +21,13 @@ class ArrayListTest {
     @Test
     void subList() {
         List<String> sub = new ArrayList<>();
-        sub.add(sub.size(), "1");
-        sub.add(sub.size(), "2");
-        lista.addAll(2, sub);
-        assertEquals(7, lista.size());
-        assertEquals("B", lista.get(1));
-        assertEquals("1", lista.get(2));
-        assertEquals("2", lista.get(3));
-        assertEquals("C", lista.get(4));
+        sub.add(sub.size(), "A");
+        sub.add(sub.size(), "B");
+        sub.add(sub.size(), "E");
+        assertTrue(lista.containsAll(sub));
 
+
+        lista = new ArrayList<>();
+        assertFalse(lista.containsAll(sub));
     }
 }

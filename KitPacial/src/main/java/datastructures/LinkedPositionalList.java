@@ -572,4 +572,22 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
 
     }
 
+    /**
+     * Encuentra todas las posiciones que tiene un elemento dado
+     *
+     * @param e elemento a encontrar
+     * @return lista posicional con todas las posiciones que contiene el elemento e
+     */
+    PositionalList<Position<E>> findAllPosition(E e) {
+        PositionalList<Position<E>> positions = new LinkedPositionalList<>();
+
+        for (Position<E> p : positions()) {
+            if (p.getElement().equals(e))
+                positions.addLast(p);
+        }
+
+        return positions;
+    }
+
+
 }

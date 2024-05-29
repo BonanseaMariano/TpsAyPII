@@ -263,24 +263,6 @@ public class ArrayList<E> implements List<E> {
     }
 
     /**
-     * Checks if the given element is present in the list.
-     *
-     * @param e the element to search for
-     * @return true if the element is found, false otherwise
-     */
-    public boolean contains(E e) {
-        for (int i = 0; i < size; i++) {
-            if (data[i] == null && e == null) {
-                return true;
-            }
-            if (data[i] != null && data[i].equals(e)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
      * Returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element.
      *
      * @param e element to search for
@@ -354,6 +336,36 @@ public class ArrayList<E> implements List<E> {
         }
         return false;
     }
+
+    /**
+     * Checks if the given element is present in the list.
+     *
+     * @param e the element to search for
+     * @return true if the element is found, false otherwise
+     */
+    public boolean contains(E e) {
+        for (int i = 0; i < size; i++) {
+            if (data[i] == null && e == null) {
+                return true;
+            }
+            if (data[i] != null && data[i].equals(e)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /*
+     * Prueba si una lista contiene todos los elementos de una lista dada
+     */
+    public boolean containsAll(List<E> l) {
+        for (E e : l) {
+            if (!contains(e))
+                return false;
+        }
+        return true;
+    }
+
 
     /**
      * Retorna una lista de enteros con las posiciones donde se encontró el elemento e.

@@ -22,6 +22,8 @@
  */
 package datastructures;
 
+import java.util.Iterator;
+
 /**
  * Concrete implementation of a binary tree using a node-based, linked structure.
  *
@@ -587,6 +589,71 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> implements Clonea
             }
         }
         return snapshot;
+    }
+
+    /**
+     * Lista de los nodos que representan un camino.
+     *
+     * @return Lista con las posiciones de los nodos que representan un camino desde la posición
+     * from a la posición to.
+     */
+    public List<Position<E>> path(Position<E> from, Position<E> to) {
+        //Si alguna de las dos posiciones no se encuentra en el arbol lanzo excepcion
+        if (from == null || to == null || search(from.getElement()) == null || search(to.getElement()) == null) {
+            throw new IllegalArgumentException("El elemento no se encuentra en el arbol");
+        }
+        List<Position<E>> pathList = new ArrayList<>();
+        List<Position<E>> aux1 = new ArrayList<>();
+        List<Position<E>> aux2 = new ArrayList<>();
+
+        //El metodo ancestor no agrega el to
+        aux1.add(0, from);
+        if (from.equals(to)) {
+            return aux1;
+        }
+
+        while (parent(from) != null) {
+            aux1.add(aux1.size(), parent(from));
+            from = parent(from);
+        }
+
+        //El metodo ancestor no agrega el to
+        aux2.add(0, to);
+        while (parent(to) != null) {
+            aux2.add(aux2.size(), parent(to));
+            to = parent(to);
+        }
+
+        int i = 0;
+        int j = 0;
+        boolean found = false;
+
+        for (Position<E> e : aux1) {
+            j = 0;
+            for (Position<E> e2 : aux2) {
+                if (e.equals(e2)) {
+                    found = true;
+                    break;
+                }
+                j++;
+            }
+            if (found) {
+                break;
+            }
+            i++;
+        }
+
+        //Una de las dos listas (aux1 o aux2 debe incluir el elemento en comun, por eso en aux1 es k<=i)
+        for (int k = 0; k <= i; k++) {
+            pathList.add(pathList.size(), aux1.get(k));
+        }
+
+        // Y aca es --j pq no quiero que se repita el elemento en comun de aux1 y aux2 en pathlist
+        while (j > 0) {
+            pathList.add(pathList.size(), aux2.get(--j));
+        }
+
+        return pathList;
     }
 
 } //----------- end of LinkedBinaryTree class -----------
